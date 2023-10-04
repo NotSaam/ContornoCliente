@@ -362,57 +362,57 @@ Crear un menú de ciudades de España
 3.Comprobar se unha cidade está cargada no conxunto 
 4.Eliminar unha cidade do conxunto
 5.Salir
-*/
 
-  let menu = prompt("Que deseas realizar ?? \n1.Introducir unha nova cidade \n2.Ver cidades cargadas no conxunto \n3.Comprobar se unha cidade está cargada no conxunto \n4.Eliminar unha cidade do conxunto \n5.Salir");
-  
-  menu = Number(menu);
+let menu = prompt("Que deseas realizar ?? \n1.Introducir unha nova cidade \n2.Ver cidades cargadas no conxunto \n3.Comprobar se unha cidade está cargada no conxunto \n4.Eliminar unha cidade do conxunto \n5.Salir");
+
+menu = Number(menu);
 
 // 1. Crear un array para almacenar las ciudades
-  let ciudades = [];
+let ciudades = [];
 
-  switch (opcion) {
-
-// Añadir una nueva ciudad al array
-    case 1:
-      ciudades.push(ciudad);
-      break;
-
-// Ver las ciudades cargadas en el array
+switch (opcion) {
+  
+  // Añadir una nueva ciudad al array
+  case 1:
+    ciudades.push(ciudad);
+    break;
+    
+    // Ver las ciudades cargadas en el array
     case 2:
-     document.write(ciudades);
+      document.write(ciudades);
       break;
-
-// Comprobar si una ciudad está cargada en el array
-    case 3:
-      if (ciudades.includes(ciudad)) {
-      document.write("La ciudad está cargada en el array");
-      } else {
-      document.write("La ciudad no está cargada en el array");
-      }
-      break;
-
-// Eliminar una ciudad del array
-    case 4:
-      const ciudadElimina = prompt("Ingresa el nombre de la ciudad a eliminar");
-      if (ciudades.has(ciudadElimina)) {
-        ciudades.delete(ciudadBuscada);
-        document.write(`La ciudad "${ciudadBuscada}" está en el conjunto`);
-      }else{
-        document.write(`La ciudad "${ciudadBuscada}" no está en el conjunto.`);
-      }
-      break;
-
-// Salir del menú
-    case 5:
-      return;
       
-// Opción no válida
-      default:
-      document.write("Opción no válida,vuelve a introducir un número del 1 al 5.");
-      }
-
-      
-    </script>
+      // Comprobar si una ciudad está cargada en el array
+      case 3:
+        if (ciudades.includes(ciudad)) {
+          document.write("La ciudad está cargada en el array");
+        } else {
+          document.write("La ciudad no está cargada en el array");
+        }
+        break;
+        
+        // Eliminar una ciudad del array
+        case 4:
+          const ciudadElimina = prompt("Ingresa el nombre de la ciudad a eliminar");
+          if (ciudades.has(ciudadElimina)) {
+            ciudades.delete(ciudadBuscada);
+            document.write(`La ciudad "${ciudadBuscada}" está en el conjunto`);
+          }else{
+            document.write(`La ciudad "${ciudadBuscada}" no está en el conjunto.`);
+          }
+          break;
+          
+          // Salir del menú
+          case 5:
+            return;
+            
+            // Opción no válida
+            default:
+              document.write("Opción no válida,vuelve a introducir un número del 1 al 5.");
+            }
+*/
+            
+            
+            </script>
   </body>
 </html>
