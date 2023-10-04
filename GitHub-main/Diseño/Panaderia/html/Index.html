@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Non vou ao mar</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>NON VOU AO MAR</h1>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Desplegable de Idiomas -->
+      <div id="language-selector">
+        <label for="language">Idioma:</label>
+        <select id="language">
+          <option value="es">Español</option>
+          <option value="gl">Gallego</option>
+          <option value="pt">Portugués</option>
+        </select>
+      </div>
+    </header>
+
+    <section id="inicio">
+      <h2>Non vou ao mar</h2>
+      <p>
+        En nuestra panadería, fusionamos tradición y sabor en cada producto que
+        elaboramos. Desde panes artesanales hasta dulces tentaciones, te
+        invitamos a deleitarte con nuestras creaciones frescas y auténticas.
+        Descubre la magia de "Non vou ao mar" y déjate llevar por los aromas y
+        sabores que nos hacen únicos. ¡Esperamos que disfrutes de tu visita!
+      </p>
+      <img src="" />
+    </section>
+
+    <section id="productos">
+      <h2>Nuestros Productos</h2>
+      <ul>
+        <li>Panes artesanales</li>
+        <li>Pasteles y tartas</li>
+        <li>Galletas caseras</li>
+        <li>Empanadas gallegas</li>
+      </ul>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>Estamos ubicados en:</p>
+      <address>
+        Calle de la Panadería, 123<br />
+        Ciudad Panadera<br />
+        Teléfono: 555-123-456<br />
+        Email: info@nonvouaomar.com
+      </address>
+    </section>
+
+    <footer>
+      <p>© 2023 Panadería Non vou ao mar</p>
+    </footer>
+
+    <!-- Script para cambiar el idioma -->
+    <script>
+      const languageSelector = document.getElementById("language");
+      const languageMappings = {
+        es: "Español",
+        gl: "Gallego",
+        pt: "Portugués",
+      };
+
+      languageSelector.addEventListener("change", () => {
+        const selectedLanguage = languageSelector.value;
+        const translatedLanguage = languageMappings[selectedLanguage];
+
+        // Cambiar el atributo "lang" de la etiqueta HTML para cambiar el idioma
+        document.documentElement.lang = selectedLanguage;
+
+        // Actualizar el texto del desplegable
+        const label = document.querySelector('label[for="language"]');
+        label.textContent = `Idioma: ${translatedLanguage}`;
+      });
+    </script>
+  </body>
+</html>
