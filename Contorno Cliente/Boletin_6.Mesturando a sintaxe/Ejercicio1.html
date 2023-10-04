@@ -3,17 +3,56 @@
   <title>Operacións básicas</title>
 
   <body>
-    <h4>Ejercicio 1.Calcula se gañaches a porra dos partidos da Champions League, sabendo que as apostas eran sobre cinco partidos e só se podía apostar 1, X ou 2 en cada partido..</h4>
+    <h4>
+      Ejercicio 1.Calcula se gañaches a porra dos partidos da Champions League,
+      sabendo que as apostas eran sobre cinco partidos e só se podía apostar 1,
+      X ou 2 en cada partido..
+    </h4>
 
     <script>
-      let Num1 = prompt("Introduce un numero para la suma:");
-      let Num2 = prompt("Introduce otro numero a sumar:");
-      Num1 = Number(Num1);
-      Num2 = Number(Num2);
+      //Partidos en un array
+      let partidos = [
+        ["Real Madrid", "Barcelona"],
+        ["Manchester United", "Bayern Munich"],
+        ["Deportivo", "Celta B"],
+        ["Racing de Ferrol", "Betis"],
+        ["Ponferradina", "Huesca"],
+      ];
 
-      let TotalSuma = Num1 + Num2;
+      let apuestas = [];
 
-      document.write(`Suma de  ${Num1} + ${Num2} =` + TotalSuma);
+      //Realiza las apuestas para la quiniela
+      for (let i = 0; i < partidos.length; i++) {
+        let partido = partidos[i];
+        let apuesta = prompt(
+          `Apuesta para el partido ${partido[0]} vs ${partido[1]}: 1, X o 2`
+        );
+        apuestas.push(apuesta);
+      }
+
+      let aciertos = 0;
+      let fallos = 0;
+
+      //Sustituir por un array que contenga los resultados
+      const resultados = [];
+
+      for (let i = 0; i < partidos.length; i++) {
+        let partido = partidos[i];
+        let resultado = prompt(
+          `Resultado del partido ${partido[0]} vs ${partido[1]}: 1, X o 2`
+        );
+
+        //Comparación de apuestas con resultados
+        if (apuestas[i] === resultado) {
+          aciertos++;
+        } else {
+          fallos++;
+        }
+      }
+
+      //Imprimimos resultados
+      document.write(`Aciertos: ${aciertos}`);
+      document.write(`<br>Fallos: ${fallos}`);
     </script>
   </body>
 </html>
