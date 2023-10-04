@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <title>Operacións básicas</title>
+
+  <body>
+    <h4>Ejercicio 9</h4>
+
+    <p>
+      Dado un número natural de catro díxitos (non fai falla comprobar que ten
+      catro díxitos) indicar cantos millares, centenas, decenas e unidades ten.
+    </p>
+
+    <script>
+      var numero = parseInt(numero);
+      var millares = Math.trunc(numero / 1000);
+      var unidades = numero % 1000;
+      var centenas = Math.trunc(unidades / 100);
+      unidades = unidades % 100;
+      var decenas = Math.trunc(unidades / 10);
+      unidades = unidades % 10;
+
+      amosarResultado(
+        "O número introducido ten " +
+          millares +
+          " millares, " +
+          centenas +
+          " centenas, " +
+          decenas +
+          " decenas e " +
+          unidades +
+          " unidades"
+      );
+    </script>
+  </body>
+</html>

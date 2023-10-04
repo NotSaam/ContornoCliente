@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <title>Operacións básicas</title>
+
+  <body>
+    <h4>Ejercicio 6</h4>
+    <p>
+      Un vendedor recibe o soldo base máis un 10% extra de comisión polas súas
+      vendas; o vendedor quere saber cantos cartos obterá no concepto de
+      comisións polas tres vendas que realizou no mes pasado e o total que
+      recibirá no mes. Para obter o resultado final pódese considerar que o seu
+      soldo base é de 1000 euros e que as vendas que realizou foron de 1200, 350
+      e 5600 euros
+    </p>
+
+    <script>
+      const SOLDO = 1000;
+      const COMISION1 = 1200;
+      const COMISION2 = 350;
+      const COMISION3 = 5600;
+      let comision = (COMISION1 + COMISION2 + COMISION3) * 0.1;
+      let total = comision + SOLDO;
+
+      amosarResultado(
+        "O vendedor cobrará de comisións " +
+          comision.toFixed(2) +
+          " €<br/>O vendedor cobrará en total " +
+          total.toFixed(2) +
+          " €"
+      );
+    </script>
+  </body>
+</html>
