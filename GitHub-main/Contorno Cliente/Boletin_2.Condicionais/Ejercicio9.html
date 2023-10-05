@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <title>Condicionais</title>
+
+  <body>
+    <h4>Ejercicio 9</h4>
+
+    <p>
+      Pedir un ano e indicar que competición de seleccións masculinas de
+      balonmán se disputa ese ano, tendo en conta que os anos múltiplos de 4
+      celébranse Xogos Olímpicos, os impares hai Mundiais e os pares Campionatos
+      de Europa.
+    </p>
+    <script>
+      let anoUsuario = prompt(
+        "Proporciona un año para saber que competicion se disputa ese año:"
+      );
+
+      if (anoUsuario % 4 == 0 && anoUsuario % 2 == 0) {
+        document.write(
+          `El ${anoUsuario} se celebran los juegos olimpicos y el campeonato de europa`
+        );
+      } else if (anoUsuario % 2 == 0) {
+        document.write(`El ${anoUsuario} se juega el campeonato de europa`);
+      } else {
+        document.write(`El ${anoUsuario} se juegan los Mundiales`);
+      }
+    </script>
+  </body>
+</html>
