@@ -22,6 +22,7 @@
       let apuestas = [];
 
       //Realiza las apuestas para la quiniela
+      let numrand= (0,8)
       for (let i = 0; i < partidos.length; i++) {
         let partido = partidos[i];
         let apuesta = prompt(
@@ -33,14 +34,9 @@
       let aciertos = 0;
       let fallos = 0;
 
-      //Sustituir por un array que contenga los resultados
-      const resultados = [];
+      //Bucle que recorra el array
+      
 
-      for (let i = 0; i < partidos.length; i++) {
-        let partido = partidos[i];
-        let resultado = prompt(
-          `Resultado del partido ${partido[0]} vs ${partido[1]}: 1, X o 2`
-        );
 
         //Comparación de apuestas con resultados
         if (apuestas[i] === resultado) {
