@@ -11,9 +11,19 @@
       poden ser aleatorios. Os números só deberán ser do 1 ao 50
     </p>
     <script>
-        
+        let array=[];
 
-
+        for(let i=0;i<9;i++){
+            array.push(Math.floor(Math.random()*50)+1);
+        }
+        for (let i = 0; i < array.length; i++) {
+            let numero=array[i];
+            let asceriscos='';
+            for (let j = 0; j < array.length; j++) {
+                asceriscos+='*';
+            }
+            document.write(asteriscos + "<br>");
+        }
 
     </script>
   </body>
