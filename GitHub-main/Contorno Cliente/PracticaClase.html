@@ -444,13 +444,32 @@ telefonos.has(98125485251)
 console.log(telefonos)
 */
 
-     
+/* Xerar con math.random mil numeros. Comprobar con que frecuencia aparecen os números do 1 ao 10. 
+Debe imprimir 
+1 apareceu x veces 
+2 apareceu y veces
+*/
+
+const frecuencia = {}; 
+
+for (let i = 0; i < 1000; i++) {
+  const numeroAleatorio = Math.floor(Math.random() * 10) + 1; // Generamos un número aleatorio entre 1 y 10.
+  
+  if (frecuencia[numeroAleatorio]) {
+    frecuencia[numeroAleatorio]++;
+  } else {
+    frecuencia[numeroAleatorio] = 1;
+  }
+}
+
+for (let numero = 1; numero <= 10; numero++) {
+  const frecuenciaAparicion = frecuencia[numero] || 0; // Si el número no aparece, se establece en 0
+  document.write(`${numero} apareceu ${frecuenciaAparicion} veces`);
+}
 
 
-
-
+          
             
-            
-            </script>
+      </script>
   </body>
 </html>
