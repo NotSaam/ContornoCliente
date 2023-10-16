@@ -448,8 +448,6 @@ console.log(telefonos)
 Debe imprimir 
 1 apareceu x veces 
 2 apareceu y veces
-*/
-
 const frecuencia = {}; 
 
 for (let i = 0; i < 1000; i++) {
@@ -466,10 +464,50 @@ for (let numero = 1; numero <= 10; numero++) {
   const frecuenciaAparicion = frecuencia[numero] || 0; // Si el número no aparece, se establece en 0
   document.write(`${numero} apareceu ${frecuenciaAparicion} veces`);
 }
+*/ 
 
+/*Calcular o factorial dun numero
+Exemplo
+5=5*4*3*2*1
+6=6*5*4*3*2*1
 
-          
-            
-      </script>
+// Definir el número para el que deseas calcular el factorial
+let numero = prompt('Introduce un numero para realizar el factorial');
+
+// Inicializar una variable para el resultado del factorial
+let factorial = 1;
+
+// Calcular el factorial
+for (let i = 1; i <= numero; i++) {
+  factorial *= i;
+}
+
+// Imprimir el resultado
+document.write(`El factorial de ${numero} es ${factorial}`);
+*/
+
+/*Comprobar si dúas palabras forman parte do anagrama.
+Estanco
+Acentos
+Son anagrmas porque se xeraron coas mesmas letras.
+*/
+
+//Palabras pedidas por pantalla
+let palabra=prompt('Introduce una palabra que deseas comprobar si es un anagrama');
+let palabra1=prompt('Introduce una palabra que deseas comprobar si es un anagrama');
+
+//igualar palabras a minusculas
+palabra =palabra.toLocaleLowerCase();
+palabra1=palabra1.toLocaleLowerCase();
+
+//Comprobar tamaño palabra
+if(palabra.length ==palabra1.length){
+
+  
+}else{
+  document.write('Las palabras no pueden ser un anagrama, ya que no tienen el mismo tamaño');
+}
+
+    </script>
   </body>
 </html>
