@@ -1,0 +1,28 @@
+<html>
+  <title>Boletín de Repaso para o examen do 26/10</title>
+  <body>
+    <p>
+      Ejercicio 5. endo en conta que a letra do dni se calcula coa seguinte
+      fórmula que podes atopar na seguinte dirección : E que podes almacenar as
+      táboas en un mapa para acceder ao número asociado á letra. Solicita un
+      número de dni (valido) por pantalla e calcula a súa letra.
+    </p>
+    <script>
+      const tablaCorrespondencia = new Map();
+      for (let i = 0; i < 23; i++) {
+        tablaCorrespondencia.set(i, "TRWAGMYFPDXBNJZSQVHLCKE".charAt(i));
+      }
+
+      const dniNumero = parseInt(
+        prompt("Introduce el número de DNI (sin letra):")
+      );
+      if (!isNaN(dniNumero) && dniNumero >= 0 && dniNumero <= 99999999) {
+
+        const letraDNI = tablaCorrespondencia.get(dniNumero % 23);
+        document.write(`La letra del DNI ${dniNumero} es: ${letraDNI}`);
+      } else {
+        document.write("El número de DNI ingresado no es válido.");
+      }
+    </script>
+  </body>
+</html>
