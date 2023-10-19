@@ -9,18 +9,26 @@
     <script>
       let frutas = new Map();
       frutas.set("Naranjas", 10);
-      frutas.set("Peras", 20);
+      frutas.set("Peras", 12);
+      frutas.set("Frambuesa", 11);
+      frutas.set("Baya", 24);
+      frutas.set("Fruta del Dragon", 15);
+      frutas.set("Banana", 13);
+      frutas.set("Plantano", 16);
+      frutas.set("Fresa", 17);
+      frutas.set("Melocoton", 17);
+      frutas.set("Granada", 22);
 
       let total = 0;
 
       frutas.forEach((precio, nombre) => {
         total += precio;
-        document.write(`${nombre}. ${precio}€`);
+        document.write(`${nombre}. ${precio}€<br>`);
       });
 
       const iva = 0.16;
       const totalConIVA = total + total * iva;
-      document.write(`Total: ${total}€`);
+      document.write(`<br>Total: ${total}€<br>`);
       document.write(`Con IVA: ${totalConIVA}€`);
     </script>
   </body>
