@@ -1,0 +1,84 @@
+<html>
+  <title>Arrays</title>
+  <body>
+    <h1>Ejercicio 1</h1>
+    <h4>
+      Simula una pila con un array Debe lanzarse o seguinte menú, do que seó se sairá se se pulsa a opción salir.
+      <br>1.Insertar ao inicio un elemento na pila 
+      <br>2.Insertar ao final un elemento na pila 
+      <br>3.Eliminar elemento da pila aoinicio
+      <br>4.Eliminar elemento da pila ao final 
+      <br>5.Ver os elementos da pila en forma de pila 
+      <br>6.Sair
+    </h4>
+
+    <script>
+
+    let menu = prompt("Menú: \n1.Insertar ao inicio un elemento na pila. \n2.Insertar ao final un elemento na pila. \n3.Eliminar elemento da pila ao inicio. \n4.Eliminar elemento da pila ao final. \n5.Ver os elementos da pila en forma de pila. \n6.Salir");
+    
+      var pila = [];
+
+    while (menu <= 6) {
+      switch (menu) {
+        case 1:
+            //Insertar elemento al inicio de la pila
+            let inicio = prompt("Escribe el elemento a insertar al inicio de la pila: ");
+            pila.unshift(inicio);
+        break;
+
+        case 2:
+            //Insertar elemento al final de la pila
+            let final = prompt("Escribe el elemento a insertar al final de la pila: ");
+            pila.push(final);
+        break;
+      
+        case 3:
+            //Eliminar elemento al inicio de la pila
+            if (pila.length > 0) {
+            pila.shift();
+            } else {
+            document.write("La pila está vacía. No se puede eliminar.")
+            }        
+        break;
+        
+        case 4:
+            //Eliminar elemento al final de la pila
+            if (pila.length === 0) {
+                document.write("La pila está vacía.");
+            } else {
+                var elementoEliminadoFinal = pila.pop();
+                document.write(`Elemento '${elementoEliminadoFinal}' eliminado del final de la pila.`);
+            }
+        break;
+
+        case 5:
+            //Ver os elementos da pila en forma de pila
+            if (pila.length === 0) {
+                document.write("La pila está vacía.");
+            } else {
+                document.write("Elementos en la pila de arriba hacia abajo: ");
+                for (var i = pila.length - 1; i >= 0; i--) {
+                    document.write(pila[i]);
+                }
+            }
+        break;
+
+        case 6:
+            //Salir
+        break;
+
+        }
+        
+        
+    } document.write("Número introducido no está dentro del rango de números nombrados anteriormente.")
+
+   
+    
+    
+    
+    </script>
+
+
+
+  </body>
+</html>
