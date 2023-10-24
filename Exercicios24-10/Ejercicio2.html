@@ -8,8 +8,33 @@
         Escribe un programa que indique se dous arrays son iguales.
     </p>
     <script>
+// Define dos arrays para comparar
+const array1 = [1, 2, 3, 4, 5];
+const array2 = [1, 2, 3, 4, 5];
 
-//Prueba 1
+// Verifica si los arrays tienen la misma longitud
+if (array1.length !== array2.length) {
+  document.write('Los arrays no son iguales porque tienen diferentes longitudes.');
+} else {
+  // Inicializa una variable para llevar el seguimiento de las diferencias
+  let sonIguales = true;
+
+  // Compara los elementos de los arrays
+  for (let i = 0; i < array1.length; i++) {
+    if (array1[i] !== array2[i]) {
+      sonIguales = false;
+      break; // Sal del bucle tan pronto como encuentres una diferencia
+    }
+  }
+
+  // Muestra el resultado basado en la variable 'sonIguales'
+  if (sonIguales) {
+    document.write('Los arrays son iguales.');
+  } else {
+    document.write('Los arrays no son iguales.');
+  }
+}
+
     </script>
 </body>
 
