@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <title>Operacións básicas</title>
+
+  <body>
+    <h4>Ejercicio2.</h4>
+    <p>
+      Un individuo quere investir o seu capital nun banco e desexa saber cantos
+      cartos aforrará despois de tres meses, se o banco paga a razón do 2%
+      mensual.
+    </p>
+
+    <script>
+      let capital = prompt("Indica tu capital total: "); // Cambia esto según tu capital inicial
+
+      var meses = 3; // 3 meses
+
+      do {
+        var ganancia = capital + 0.02;
+        ganancia = ganancia * meses;
+        meses++;
+      } while (meses <= 3);
+
+      document.write(`Aforrará ${ganancia} euros`);
+    </script>
+  </body>
+</html>

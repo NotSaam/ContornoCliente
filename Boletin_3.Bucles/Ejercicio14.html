@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <title>Condicionais</title>
+
+  <body>
+    <h4>Ejercicio 14</h4>
+
+    <p>Debuxar por pantalla con asteriscos o número de liñas que introduce o usuario (cada liña debe ter o número de asteriscos que se corresponde co número de liña).</p>
+    <script>
+
+let lineas = prompt("Numero de lineas que desea que se impriman:");
+        document.write("Lineas indicadas: ", lineas);
+
+        for(let i = 1; i <= Number(lineas); i++){
+            document.write(`<br>*`);
+            for(let j = 1; j <= lineas -1; j++){
+                document.write("*");
+            }
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <title>Condicionais</title>
+
+  <body>
+    <h4>Ejercicio 2</h4>
+
+    <p>
+      Calcular a superficie dunha figura xeométrica. A figura só pode ser
+      TRIÁNGULO, CADRADO, RECTÁNGULO ou CÍRCULO.
+    </p>
+    <script>
+      let objeto = prompt(
+        "Introduce el tipo de figura que deseas calcular su superficie: \n1.Triángulo \n2.Cadrado \n3.Rectángulo \n4.Círculo"
+      );
+
+      objeto = Number(objeto);
+
+      switch (objeto) {
+        case 1:
+          let base = prompt("Introduce en centímetros la base del triángulo: ");
+          let altura = prompt("Introduce en centímetro la altura del triángulo: ");
+
+          base = Number(base);
+          altura = Number(altura);
+
+          AreaTriángulo = (base * altura) / 2;
+          document.write("El área del triángulo es :" + AreaTriángulo);
+
+        case 2:
+          let lado = prompt("Introduce en centímetros la base del cuadrado: ");
+
+          lado = Number(lado);
+          AreaCuadrado= lado * lado;
+          document.write("El área del cauadrado es :" + AreaCuadrado);
+
+        case 3:
+          let largo = prompt("Introduce en centímetros la base del rectángulo: ");
+          let ancho = prompt("Introduce en centímetro la altura del rectángulo: ");
+
+          base = Number(base);
+          altura = Number(altura);
+
+          AreaRectángulo =largo * ancho;
+          document.write("El área del rectángulo es :" + AreaRectángulo);
+
+        case 4:
+          let radio = prompt("Introduce en centímetros la base del círculo: ");
+          
+          radio = Number(base);
+          
+          AreaCirculo = Math.PI*radio^2;
+          document.write("El área del círculo es :" + AreaCirculo);
+          break;
+
+        default:
+          document.write("Número incorrecto vuelve a introducir otro!! Fijate bien que este dentro del rango")
+      }
+    </script>
+  </body>
+</html>

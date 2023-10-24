@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <title>Operacións básicas</title>
+
+  <body>
+    <h4>Ejercicio 5</h4>
+    <p>
+      Dada unha cantidade en euros, obter a equivalencia en pesetas e en
+      dólares.
+    </p>
+    <script>
+      var euros = parseFloat(euros);
+      var dolar = parseFloat(dolar);
+      var equivalenciaDolar = euros * dolar;
+      var equivalenciaPesetas = euros * PESETAS;
+      amosarResultado(
+        "Dólares = " +
+          equivalenciaDolar.toFixed(2) +
+          "<br /> Pesetas = " +
+          equivalenciaPesetas.toFixed(2)
+      );
+    </script>
+  </body>
+</html>

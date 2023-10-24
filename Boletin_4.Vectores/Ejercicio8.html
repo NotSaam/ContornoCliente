@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <title>Vectores</title>
+
+  <body>
+    <h4>Ejercicio 8</h4>
+
+    <p>
+      Dado un vector de N elementos, modificar ese vector para que cada elemento
+      conteña a suma dos anteriores.
+    </p>
+    <script>
+      let numeroElementos = prompt(`Cuantos numeros de elementos son:`);
+
+      var vectorElemento = [];
+      var vectorElementoSumado = [];
+      for (let i = 0; i < numeroElementos; i++) {
+        vectorElemento[i] = vectorElemento.push(
+          vectorElemento[i] + vectorElemento[i]
+        );
+        for (let j = 0; j < numeroElementos[i]; j++) {
+          vectorElementoSumado[j] = vectorElementoSumado.push(
+            vectorElemento[i] + vectorElemento[i]
+          );
+        }
+      }
+      document.write(vectorElementoSumado);
+    </script>
+  </body>
+</html>
