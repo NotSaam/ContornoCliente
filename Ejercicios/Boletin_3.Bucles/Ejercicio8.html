@@ -6,6 +6,27 @@
     <h4>Ejercicio 8</h4>
 
     <p>Imprime a serie de Fibonacci; é dicir, a serie que, empezando polo 1, presenta como seguinte elemento a suma dos dous anteriores: 1,1,2,3,5,8,13...</p>
-    <script></script>
+    <script>
+
+// Definir los dos primeros números de la serie
+let a = 1;
+let b = 1;
+
+// Imprimir el primer número
+document.write(a + "<br>");
+
+// Bucle para calcular y imprimir los siguientes números de la serie
+while (b <= 100) { // Puedes cambiar el límite según tus necesidades
+  document.write(b + "<br>");
+
+  // Calcular el siguiente número de la serie
+  let c = a + b;
+
+  // Actualizar los valores de 'a' y 'b' para la siguiente iteración
+  a = b;
+  b = c;
+}
+
+    </script>
   </body>
 </html>
