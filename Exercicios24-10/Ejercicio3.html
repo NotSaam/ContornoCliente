@@ -9,7 +9,25 @@
         Escribe un conversor de tempo. O programa debe pedirlle ao usuario os
         días, horas e minutos e calcular cantos segundos totais son.
     </p>
-    <script></script>
+    <script>
+
+const dias = parseInt(prompt('Introduce la cantidad de dias:'));
+const horas = parseInt(prompt('Introduce la cantidad de horas:'));
+const minutos = parseInt(prompt('Introduce la cantidad de minutos:'));
+
+
+if (!isNaN(dias && horas && minutos)) {
+  document.write(`El número ingresado de dias es: ${dias} y el numero de horas es: ${horas} y el numero de minutos es: ${minutos}`);
+} else {
+  document.write('No has ingresado un número válido,mira de introducir un numero correcto.');
+}
+
+const segundosTotales = (dias * 24 * 60 * 60) + (horas * 60 * 60) + (minutos * 60);
+
+document.write(`El tiempo total en segundos es: ${segundosTotales} segundos.`);
+
+
+</script>
 </body>
 
 </html>
