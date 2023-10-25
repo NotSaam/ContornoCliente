@@ -6,6 +6,21 @@
     <h4>Ejercicio 13</h4>
 
     <p>Escribir un programa que calcule o máximo común divisor de dous números naturais positivos segundo o algoritmo de Euclides, que consiste en ir restando o número menor ao maior ata obter dous números iguais, momento no que temos o máximo común divisor.</p>
-    <script></script>
+    <script>
+      const numero1 = parseInt(prompt("Introduce el primer número:"));
+const numero2 = parseInt(prompt("Introduce el segundo número:"));
+
+let a = numero1;
+let b = numero2;
+
+while (b !== 0) {
+  const temp = b;
+  b = a % b;
+  a = temp;
+}
+
+document.write(`El máximo común divisor de ${numero1} y ${numero2} es ${a}.`);
+
+    </script>
   </body>
 </html>

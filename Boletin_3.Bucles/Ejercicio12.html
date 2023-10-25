@@ -6,6 +6,27 @@
     <h4>Ejercicio 12</h4>
 
     <p>Escribir un programa que lea N números enteiros e indique en que posición introducimos o valor máximo.</p>
-    <script></script>
+    <script>
+      const n = parseInt(prompt("Introduce la cantidad de números:"));
+let max = Number.MIN_SAFE_INTEGER; // Inicializamos max con el valor mínimo seguro
+let posicionMax = -1;
+
+for (let i = 1; i <= n; i++) {
+  const numero = parseInt(prompt(`Introduce el número ${i}:`));
+
+  if (numero > max) {
+    max = numero;
+    posicionMax = i;
+  }
+}
+
+if (posicionMax !== -1) {
+  document.write(`El valor máximo es ${max} y se introdujo en la posición ${posicionMax}.`);
+} else {
+  document.write("No se introdujeron números o hubo un error en la entrada de datos.");
+}
+
+
+    </script>
   </body>
 </html>
