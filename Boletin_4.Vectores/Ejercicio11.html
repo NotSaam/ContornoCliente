@@ -7,6 +7,42 @@
 
     <p>Crea un vector de números dun tamaño introducido por teclado, éncheo con números aleatorios primos menores que 100 e indica cal é o maior de todos eles.</p>
     <script>
+      // Solicitar el tamaño del vector al usuario
+const n = parseInt(prompt("Introduce el tamaño del vector:"));
+
+// Función para verificar si un número es primo
+function esPrimo(numero) {
+  if (numero <= 1) return false;
+  if (numero <= 3) return true;
+  if (numero % 2 === 0 || numero % 3 === 0) return false;
+
+  for (let i = 5; i * i <= numero; i += 6) {
+    if (numero % i === 0 || numero % (i + 2) === 0) return false;
+  }
+
+  return true;
+}
+
+// Crear un vector de números primos aleatorios menores que 100
+const vector = [];
+let mayor = 0;
+
+for (let i = 0; i < n; i++) {
+  let numeroPrimo;
+  do {
+    numeroPrimo = Math.floor(Math.random() * 100);
+  } while (!esPrimo(numeroPrimo));
+
+  vector.push(numeroPrimo);
+
+  if (numeroPrimo > mayor) {
+    mayor = numeroPrimo;
+  }
+}
+
+// Mostrar el vector y el número mayor
+document.write(`Vector de números primos: [${vector.join(", ")}]<br>`);
+document.write(`El número mayor es: ${mayor}`);
 
 
 

@@ -12,7 +12,20 @@
       ou igual a 5.
     </p>
     <script>
-      
+      // Solicitar las notas de los exámenes al usuario
+const notaTeorica = parseFloat(prompt("Introduce la nota del examen teórico:"));
+const notaPractica = parseFloat(prompt("Introduce la nota del examen práctico:"));
+
+// Calcular la nota media de los exámenes
+const notaMedia = (notaTeorica + notaPractica) / 2;
+
+// Comprobar si el alumno está aprobado o suspendido
+if (notaTeorica >= 4 && notaPractica >= 4 && notaMedia >= 5) {
+  document.write("El alumno está aprobado en la materia.");
+} else {
+  document.write("El alumno está suspendido en la materia.");
+}
+
 
 
     </script>
