@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<title>Ejercicio 1</title>
+
+<body>
+    <h4>Ejercicio 1</h4>
+
+    <p>
+        1. Crear un programa que lance un menú que faga o seguinte: a- Crear un
+        conxunto vacío. Indicar o conxunto a crear. Por exemplo: libros. b-
+        Eliminar un conxunto. Indicar o conxunto a eliminar. Por exemplo: libros.
+        c- Crear un conxunto coa unión de dous conxuntos. Unir os dous en un. d-
+        Crear un conxunto ca intersección de dous conxuntos (só os elementos que
+        están nos dous conxuntos). e- Introducir un elemento no conxunto indicado.
+        f- Eliminar un elemento do conxunto indicado. g- Saír.
+    </p>
+    <script>
+        // Inicializamos un objeto para almacenar los conjuntos
+        const conjuntos = {};
+
+        // Función para crear un conjunto vacío
+        function crearConjunto(nombreConjunto) {
+            conjuntos[nombreConjunto] = new Set();
+            document.write(`Conjunto "${nombreConjunto}" creado.\n`);
+        }
+
+        // Función para eliminar un conjunto
+        function eliminarConjunto(nombreConjunto) {
+            if (conjuntos[nombreConjunto]) {
+                delete conjuntos[nombreConjunto];
+                document.write(`Conjunto "${nombreConjunto}" eliminado.\n`);
+            } else {
+                document.write(`El conjunto "${nombreConjunto}" no existe.\n`);
+            }
+        }
+
+        // Función para unir dos conjuntos en uno
+        function unirConjuntos(nombreConjunto1, nombreConjunto2) {
+            if (conjuntos[nombreConjunto1] && conjuntos[nombreConjunto2]) {
+                const conjuntoUnido = new Set([
+                    ...conjuntos[nombreConjunto1],
+                    ...conjuntos[nombreConjunto2],
+                ]);
+                document.write(`Conjunto unido creado.\n`);
+                document.write(
+                    `Conjunto Unión: [${Array.from(conjuntoUnido).join(", ")}]\n`
+                );
+            } else {
+                document.write(`Alguno de los conjuntos no existe.\n`);
+            }
+        }
+
+        // Función para encontrar la intersección de dos conjuntos
+        function interseccionConjuntos(nombreConjunto1, nombreConjunto2) {
+            if (conjuntos[nombreConjunto1] && conjuntos[nombreConjunto2]) {
+                const conjuntoInterseccion = new Set(
+                    [...conjuntos[nombreConjunto1]].filter((element) =>
+                        conjuntos[nombreConjunto2].has(element)
+                    )
+                );
+                document.write(`Conjunto intersección creado.\n`);
+                document.write(
+                    `Conjunto Intersección: [${Array.from(conjuntoInterseccion).join(
+                        ", "
+                    )}]\n`
+                );
+            } else {
+                document.write(`Alguno de los conjuntos no existe.\n`);
+            }
+        }
+
+        // Función para agregar un elemento a un conjunto
+        function agregarElemento(nombreConjunto, elemento) {
+            if (conjuntos[nombreConjunto]) {
+                conjuntos[nombreConjunto].add(elemento);
+                document.write(
+                    `Elemento "${elemento}" agregado al conjunto "${nombreConjunto}".\n`
+                );
+            } else {
+                document.write(`El conjunto "${nombreConjunto}" no existe.\n`);
+            }
+        }
+
+        // Función para eliminar un elemento de un conjunto
+        function eliminarElemento(nombreConjunto, elemento) {
+            if (conjuntos[nombreConjunto]) {
+                if (conjuntos[nombreConjunto].has(elemento)) {
+                    conjuntos[nombreConjunto].delete(elemento);
+                    document.write(
+                        `Elemento "${elemento}" eliminado del conjunto "${nombreConjunto}".\n`
+                    );
+                } else {
+                    document.write(
+                        `El elemento "${elemento}" no existe en el conjunto "${nombreConjunto}".\n`
+                    );
+                }
+            } else {
+                document.write(`El conjunto "${nombreConjunto}" no existe.\n`);
+            }
+        }
+
+        // Menú de operaciones
+        let opcion;
+        while (opcion !== "g") {
+            opcion = prompt(
+                "Menú de operaciones:\n a- Crear conjunto\n b- Eliminar conjunto\n c- Unir conjuntos\n d- Intersección de conjuntos\n e- Agregar elemento\n f- Eliminar elemento\n g- Salir\n"
+            );
+
+            switch (opcion) {
+                case "a":
+                    const nombreConjunto = prompt(
+                        "Ingresa el nombre del conjunto a crear:"
+                    );
+                    crearConjunto(nombreConjunto);
+                    break;
+                case "b":
+                    const conjuntoEliminar = prompt(
+                        "Ingresa el nombre del conjunto a eliminar:"
+                    );
+                    eliminarConjunto(conjuntoEliminar);
+                    break;
+                case "c":
+                    const nombreConjunto1 = prompt(
+                        "Ingresa el nombre del primer conjunto:"
+                    );
+                    const nombreConjunto2 = prompt(
+                        "Ingresa el nombre del segundo conjunto:"
+                    );
+                    unirConjuntos(nombreConjunto1, nombreConjunto2);
+                    break;
+                case "d":
+                    const conjuntoInterseccion1 = prompt(
+                        "Ingresa el nombre del primer conjunto:"
+                    );
+                    const conjuntoInterseccion2 = prompt(
+                        "Ingresa el nombre del segundo conjunto:"
+                    );
+                    interseccionConjuntos(conjuntoInterseccion1, conjuntoInterseccion2);
+                    break;
+                case "e":
+                    const nombreConjuntoAgregar = prompt(
+                        "Ingresa el nombre del conjunto:"
+                    );
+                    const elementoAgregar = prompt("Ingresa el elemento a agregar:");
+                    agregarElemento(nombreConjuntoAgregar, elementoAgregar);
+                    break;
+                case "f":
+                    const nombreConjuntoEliminar = prompt(
+                        "Ingresa el nombre del conjunto:"
+                    );
+                    const elementoEliminar = prompt("Ingresa el elemento a eliminar:");
+                    eliminarElemento(nombreConjuntoEliminar, elementoEliminar);
+                    break;
+                case "g":
+                    document.write("Saliendo del programa.");
+                    break;
+                default:
+                    document.write(
+                        "Opción no válida. Por favor, ingresa una opción válida."
+                    );
+            }
+        }
+    </script>
+</body>
+
+</html>
