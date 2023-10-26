@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <title>Boletín de Repaso para o examen do 26/10</title>
+  <head>
+    <meta charset="UTF-8" />
+    <br />
+  </head>
   <body>
-    <p>
-      Ejercicio 2. Escribe un algoritmo que tome unha frase como argumento e
-      devolva a mesma frase pero coa inicial de cada palabra en maiúscula. Por
-      exemplo: "pero no tengo hambre " debería devolver a frase "Pero No Tengo
-      Hambre"
-    </p>
-
     <script>
+      var cadena = prompt("Introduce unha frase:");
+      var resultado = "";
 
-      
+
+      var tenEspacio = true;
 
 
+      for (var i = 0; i < cadena.length; i++) {
+        var letra =cadena[i];
+
+
+        if (letra == " "){
+          tenEspacio = true;
+        }else{
+          if (tenEspacio){
+            letra=letra.toUpperCase();
+          }else{
+            letra=letra.toLowerCase();
+          }
+
+
+          tenEspacio = false;
+        }
+        resultado += letra;
+      }
+      console.log(resultado);
     </script>
   </body>
 </html>
