@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <title>Condicionais</title>
+
+  <body>
+    <h4>Ejercicio 7</h4>
+    
+    <p>Dados tres números, indica cal é o maior.</p>
+    <script>
+        var numero1 = 11;
+        var numero2 = 8;
+        var numero3 = 9;
+
+        if(numero1 > numero2 && numero1 > numero3){
+            document.write(`El ${numero1} es el mas grande de los tres (${numero2}, ${numero3})`)
+        } else if(numero2 > numero1 && numero2 > numero3){
+            document.write(`El ${numero2} es el mas grande de los tres (${numero1}, ${numero3})`)
+        } else if(numero3 > numero1 && numero3 > numero2){
+            document.write(`El ${numero3} es el mas grande de los tres (${numero1}, ${numero2})`)
+        }
+    </script>
+  </body>
+</html>

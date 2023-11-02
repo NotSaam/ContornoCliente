@@ -1,0 +1,35 @@
+<html>
+  <title>Boletín de Repaso para o examen do 26/10</title>
+  <body>
+    <p>
+      Ejercicio 3. Crea un mapa que almacene 10 nomes de froita e o seu prezo.
+      Calcula finalmente o importe total da compra realizada. Naranxas. 10€
+      Peras. 20€ Total: 30€ Con IVA: 69,6 (iva do 16%).
+    </p>
+    <script>
+      let frutas = new Map();
+      frutas.set("Naranjas", 10);
+      frutas.set("Peras", 12);
+      frutas.set("Frambuesa", 11);
+      frutas.set("Baya", 24);
+      frutas.set("Fruta del Dragon", 15);
+      frutas.set("Banana", 13);
+      frutas.set("Plantano", 16);
+      frutas.set("Fresa", 17);
+      frutas.set("Melocoton", 17);
+      frutas.set("Granada", 22);
+
+      let total = 0;
+
+      frutas.forEach((precio, nombre) => {
+        total += precio;
+        document.write(`${nombre}. ${precio}€<br>`);
+      });
+
+      const iva = 0.16;
+      const totalConIVA = total + total * iva;
+      document.write(`<br>Total: ${total}€<br>`);
+      document.write(`Con IVA: ${totalConIVA}€`);
+    </script>
+  </body>
+</html>

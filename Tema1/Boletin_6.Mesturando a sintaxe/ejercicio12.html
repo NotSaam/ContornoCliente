@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <title>Condicionais</title>
+
+  <body>
+    <h4>Ejercicio 12</h4>
+
+    <p>
+      Queremos facer unha táboa clasificatoria dunha competición deportiva, onde
+      se se preme no nome dun dos equipos se amosen as imaxes dos xogadores que
+      compoñen ese equipo e se pasamos co rato por riba dunha delas apareza un
+      texto informativo lateral cos datos do xogador.
+    </p>
+    <h1>Tabla Clasificatoria</h1>
+    <table>
+      <tr>
+        <td id="equipo1">Equipo 1</td>
+        <td id="equipo2">Equipo 2</td>
+      </tr>
+    </table>
+    <div id="informacionJugador" style="display: none;">
+      <h2>Información del Jugador</h2>
+      <p>Nombre: <span id="nombreJugador"></span></p>
+      <p>Posición: <span id="posicionJugador"></span></p>
+    </div>
+
+    <script>
+      // Evento para mostrar información del jugador al pasar el ratón sobre la imagen
+      const imagenesJugadores = document.querySelectorAll('img');
+      const informacionJugador = document.getElementById('informacionJugador');
+      const nombreJugador = document.getElementById('nombreJugador');
+      const posicionJugador = document.getElementById('posicionJugador');
+
+      imagenesJugadores.forEach((imagen) => {
+        imagen.addEventListener('mouseover', function () {
+          const jugador = this.getAttribute('data-jugador');
+          const [nombre, posicion] = jugador.split(',');
+          nombreJugador.textContent = nombre;
+          posicionJugador.textContent = posicion;
+          informacionJugador.style.display = 'block';
+        });
+
+        imagen.addEventListener('mouseout', function () {
+          informacionJugador.style.display = 'none';
+        });
+      });
+
+      // Evento para mostrar imágenes de jugadores al hacer clic en un equipo
+      const equipo1 = document.getElementById('equipo1');
+      const equipo2 = document.getElementById('equipo2');
+
+      equipo1.addEventListener('click', function () {
+        const fila = this.parentElement;
+        const celdas = fila.children;
+        celdas[0].innerHTML = '<img src="jugador1.jpg" data-jugador="Jugador 1,Delantero">';
+        celdas[1].innerHTML = '<img src="jugador2.jpg" data-jugador="Jugador 2,Defensa">';
+      });
+
+      equipo2.addEventListener('click', function () {
+        const fila = this.parentElement;
+        const celdas = fila.children;
+        celdas[0].innerHTML = '<img src="jugador3.jpg" data-jugador="Jugador 3,Mediocampista">';
+        celdas[1].innerHTML = '<img src="jugador4.jpg" data-jugador="Jugador 4,Portero">';
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+  <title>Boletín de Repaso para o examen do 26/10</title>
+  <body>
+    <p>
+      Ejercicio 4. Crea un algoritmo que resolva a serie de Fibonacci ata ese
+      número A serie de Fibonacci empeza en 0, 1 e a partir de aí os seguintes
+      números son a súa dos dous anteriores. 0,1,1,2,3,5,8,13. Pon o límite de n
+      elementos que che indiquen por pantalla. Na serie de exemplo hai 8
+      elementos.
+    </p>
+    <script>
+      let limite = prompt("Introduce un numero para realizar la serie de Fibonacci");
+      let fib = [0, 1];
+
+      for (let i = 2; i < limite; i++) {
+        fib[i] = fib[i - 1] + fib[i - 2];
+      }
+
+      document.write(fib.slice(0, limite));
+    </script>
+  </body>
+</html>

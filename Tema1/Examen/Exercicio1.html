@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<title>Ejercicio 1</title>
+
+<body>
+    <h4>Ejercicio 1</h4>
+
+    <p>
+        Crea un menú onde o usuario poida escoller entre a seguintes accións:
+        a.Cargar alumnos.
+        b. Eliminar un alumno.
+        c. Agregar nota a un alumno.
+        d. Borrar nota a un alumno
+        e. Sair
+        Para a realización do exercicio deben terse as seguintes consideracións.
+        • Só se pode usar arrays para gardar os alumnos e as súas notas. O normal é usar un
+        array bidimensional. 
+        • Só se sae do menú se se pulsar a opción saír.
+    </p>
+    <script>
+        //Inicializamos un objeto para almacenar los conjuntos
+        const alumnos =[];
+
+        //Creamos la variable opcion para poder desarrollar el menu
+        let opcion;
+        //Utilizamos while en casa de que e use la letra g salga del menu
+        while(opcion!=="g"){
+            opcion = prompt("Menú de operaciones: \n a)Cargar alumnos\n b)Eliminar alumno\nc)Agregar nota a un alumno\nd)Borrar nota a un alumno\ne)Salir");
+        
+        //Utilizamos un switch para desarrollar el menu
+        switch(opcion){
+            case "a": 
+                const cargarAlumnos = prompt ("Ingresa el nombre del alumno a añadir");
+                alumnos.add[cargarAlumnos];
+                document.write(alumnos);
+                break;
+
+            case "b": 
+                const eliminarAlumnos = prompt ("Ingresa el nombre del alumno a eliminar");
+                alumnos.delete[eliminarAlumnos];
+                document.write(alumnos);
+                break;
+
+            case "c": 
+                let alumno = prompt ("Ingresa el nombre del alumno para añadir su nota");
+                const añadirNota = prompt("Ingrese la nota para añadir al alumno");
+                alumnos.add(alumnos).add(añadirNota);
+                break;
+            case "d": 
+                let alumnos = prompt ("Ingresa el nombre del alumno para añadir su nota");
+                const eliminarNota = prompt("Ingrese la nota para eliminar al alumno");
+                alumnos.delete(eliminarNota);
+                break;
+            case "e": 
+            document.write("Saliendo del programa");
+            break;
+
+            default: 
+            document.write("Opción no válida. Por favor,ingresa una opción válida");
+
+        }
+        }
+        
+        
+        
+        
+        
+
+    </script>
+</body>
+
+</html>

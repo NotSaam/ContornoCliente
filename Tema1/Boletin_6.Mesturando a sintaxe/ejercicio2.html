@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <title>Condicionais</title>
+
+  <body>
+    <h4>Ejercicio 2</h4>
+
+    <p>Vamos botar unha partida de tute. Despois de repartir as cartas comproba se algún dos contrincantes pode cantar.</p>
+    <script>
+      // Crear un mazo de cartas
+      const mazo = [
+  "1 de Espadas", "2 de Espadas", "3 de Espadas", "4 de Espadas",
+  "1 de Copas", "2 de Copas", "3 de Copas", "4 de Copas",
+  // ... otras cartas ...
+];
+
+const jugador1 = [];
+const jugador2 = [];
+
+// Repartir cartas a los jugadores
+for (let i = 0; i < 5; i++) {
+  const cartaJugador1 = mazo.shift();
+  jugador1.push(cartaJugador1);
+
+  const cartaJugador2 = mazo.shift();
+  jugador2.push(cartaJugador2);
+}
+
+// Mostrar las cartas de cada jugador
+console.log("Cartas del jugador 1:", jugador1);
+console.log("Cartas del jugador 2:", jugador2);
+
+
+
+    </script>
+  </body>
+</html>

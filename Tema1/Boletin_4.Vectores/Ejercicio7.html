@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <title>Vectores</title>
+
+  <body>
+    <h4>Ejercicio 7</h4>
+
+    <p>Solicitar os datos dunha matriz 3x4 e amosala trasposta.</p>
+    <script>
+      // Crear una matriz 3x4
+const matriz = [];
+const filas = 3;
+const columnas = 4;
+
+// Leer valores para llenar la matriz
+for (let i = 0; i < filas; i++) {
+  matriz[i] = [];
+  for (let j = 0; j < columnas; j++) {
+    const valor = parseInt(prompt(`Introduce el valor para la posición [${i}][${j}]:`));
+    matriz[i][j] = valor;
+  }
+}
+
+// Calcular la matriz traspuesta
+const matrizTraspuesta = [];
+for (let j = 0; j < columnas; j++) {
+  matrizTraspuesta[j] = [];
+  for (let i = 0; i < filas; i++) {
+    matrizTraspuesta[j][i] = matriz[i][j];
+  }
+}
+
+// Mostrar la matriz original
+document.write("Matriz original 3x4:<br>");
+for (let i = 0; i < filas; i++) {
+  for (let j = 0; j < columnas; j++) {
+    document.write(matriz[i][j] + " ");
+  }
+  document.write("<br>");
+}
+
+// Mostrar la matriz traspuesta
+document.write("Matriz traspuesta 4x3:<br>");
+for (let j = 0; j < columnas; j++) {
+  for (let i = 0; i < filas; i++) {
+    document.write(matrizTraspuesta[j][i] + " ");
+  }
+  document.write("<br>");
+}
+
+    </script>
+  </body>
+</html>

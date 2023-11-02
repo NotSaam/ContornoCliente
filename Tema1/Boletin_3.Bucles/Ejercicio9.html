@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <title>Condicionais</title>
+
+  <body>
+    <h4>Ejercicio 9</h4>
+
+    <p>
+      Dado un número N, amosar por pantalla todas as combinacións de dous
+      números naturais que sumados dean N.
+    </p>
+    <script>
+      let num = prompt("Inntroduce el numero que deseas"); // Variable en la que le pedimos al usuario el numero que desea
+
+      document.write(
+        `Combinaciones de dos números naturales que suman ${num}:<br>`
+      );
+
+      for (let i = 0; i <= num / 2; i++) {
+        let j = num - i;
+        document.write(`${i} + ${j} = ${num}<br>`);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<title>Ejercicio 1</title>
+<body>
+    <h4>Ejercicio 1</h4>
+
+    <p>
+        Crea un progama que indique cal é o elemento máis repetido dun array
+        unidimensional e cantas veces aparece.
+    </p>
+    <script>
+        // Definimos el array
+        const array = [23,21,33,56,3,7,6,21,33,52,33,64,33,9,0];
+
+        //Definimos la variable a contar
+        const contador = {};
+
+        //Tenemos que definir una variable para el elemento mas repetido y para su numero de veces
+        let masRepetido;
+        let vecesRepe=0;
+
+        array.forEach((numeros) =>  {
+            if(!contador[numeros]){
+                contador[numeros]=1;
+            }else{
+                contador[numeros]++;
+                if(contador[numeros]>vecesRepe){
+                    vecesRepe=contador[numeros];
+                    masRepetido;
+                }
+            }
+        });
+        document.write(`El elemento mas repetido es ${masRepetido} y aparece ${vecesRepe}`);
+    </script>
+</body>
+
+</html>
