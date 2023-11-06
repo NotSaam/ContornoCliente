@@ -13,17 +13,17 @@
             const letrasAdivinadas = new Set();
             let palabraAhorcado = '_'.repeat(palabraSecreta.length);
 
-            while (palabraAhorcado.includes('_')) {
-                console.log(`Palabra: ${palabraAhorcado}`);
-                const letra = prompt('Adivina una letra:').toLowerCase();
+        while (palabraAhorcado.includes('_')) {
+            console.log(`Palabra: ${palabraAhorcado}`);
+            const letra = prompt('Adivina una letra:').toLowerCase();
 
-                if (letra.length === 1) {
-                    if (palabraSecreta.includes(letra) && !letrasAdivinadas.has(letra)) {
-                        letrasAdivinadas.add(letra);
-                        palabraAhorcado = '';
-                        for (let letraSecreta of palabraSecreta) {
-                            if (letrasAdivinadas.has(letraSecreta)) {
-                                palabraAhorcado += letraSecreta;
+        if (letra.length === 1) {
+            if (palabraSecreta.includes(letra) && !letrasAdivinadas.has(letra)) {
+                letrasAdivinadas.add(letra);
+                palabraAhorcado = '';
+                    for (let letraSecreta of palabraSecreta) {
+                        if (letrasAdivinadas.has(letraSecreta)) {
+                            palabraAhorcado += letraSecreta;
                             } else {
                                 palabraAhorcado += '_';
                             }

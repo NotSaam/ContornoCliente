@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <title>Funciones</title>
+
+  <body>
+    <h4>Funcion callback</h4>
+
+    <script>
+    const bienvenido = function () {
+        return "Bienvenido de nuevo, ";
+    };
+    const usuario = function (callback) {
+        console.log(callback() + "Javier");
+    };
+    usuario(bienvenido);
+    </script>
+</body>
+</html>
