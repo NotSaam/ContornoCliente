@@ -6,18 +6,43 @@
     <h4>Funcion coincidencias de Variables</h4>
 
     <script>
-/* Escribe unha funcion que a pártir de unha palabra recibida, reciba como parametros
-    un numero variable de letras e mostre en pantalla as coincidencias entre a palabra secreta e as proporcionadas */
+        /* Escribe unha funcion que a pártir de unha palabra recibida, reciba como parametros
+            un numero variable de letras e mostre en pantalla as coincidencias entre a palabra secreta e as proporcionadas */
 
-    //Variables
-        let palabraSecreta = "Palo";
-        let palabraUser = prompt("Escribe una palabra:");
+        function juegoAhorcado(palabraSecreta) {
+            const letrasAdivinadas = new Set();
+            let palabraAhorcado = '_'.repeat(palabraSecreta.length);
 
-    //Declaración de una función
-        function coincidenciasPalabras(palabraSecreta,palabraUser){
-            let iguales=[];
+            while (palabraAhorcado.includes('_')) {
+                console.log(`Palabra: ${palabraAhorcado}`);
+                const letra = prompt('Adivina una letra:').toLowerCase();
 
+                if (letra.length === 1) {
+                    if (palabraSecreta.includes(letra) && !letrasAdivinadas.has(letra)) {
+                        letrasAdivinadas.add(letra);
+                        palabraAhorcado = '';
+                        for (let letraSecreta of palabraSecreta) {
+                            if (letrasAdivinadas.has(letraSecreta)) {
+                                palabraAhorcado += letraSecreta;
+                            } else {
+                                palabraAhorcado += '_';
+                            }
+                        }
+                    } else {
+                        console.log('¡Letra incorrecta! Inténtalo de nuevo.');
+                    }
+                } else {
+                    console.log('Ingresa solo una letra.');
+                }
+            }
+
+            console.log(`¡Felicidades! Adivinaste la palabra: ${palabraSecreta}`);
         }
+
+        // Ejemplo de uso:
+        const palabraSecreta = 'javascript';
+        juegoAhorcado(palabraSecreta);
+
 
 
 
