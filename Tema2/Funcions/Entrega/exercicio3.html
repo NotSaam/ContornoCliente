@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<title>Funciones</title>
+
+<body>
+    <h4>
+        Crear unha función que devolva a letra do DNI do número que recibe por
+        parámetro.
+    </h4>
+
+    <script>
+        let dni = Number(prompt("Introduce un DNI para saber su letra: "));
+
+        function calcular(dni) {
+            var tabla = "TRWAGMYFPDXBNJZSQVHLCKET";
+            var posicion = dni % 23;
+            var letra = tabla.charAt(posicion);
+            return letra;
+        }
+
+        var letraDNI = calcular(dni);
+        document.write(`La letra del DNI ${dni} es: ${letraDNI}`);
+    </script>
+</body>
+
+</html>

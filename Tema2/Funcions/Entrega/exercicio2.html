@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<title>Funciones</title>
+
+<body>
+    <h4>Crear unha función que devolva a táboa de multiplicar do número que recibe por parámetro. </h4>
+
+    <script>
+        let numero = Number(prompt("Introduce un numero para calcular su tabla de multiplicar:"));
+
+        function tablaMultiplicar(numero){
+            document.write(`La tabla de multiplicar del ${numero} <br>`)
+            for(let i=1;i<=10;i++){
+            document.write(`${numero} x ${i} = ${numero*i}<br>`);
+            }
+        }
+        tablaMultiplicar(numero);
+
+    </script>
+</body>
+</html>
