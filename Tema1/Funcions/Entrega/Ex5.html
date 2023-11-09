@@ -6,8 +6,35 @@
     <h4>Crear unha función que devolva true si, recibidas dúas palabras, estas conteñen as mesmas letras aínda que estean en posicións distintas.</h4>
 
     <script>
+//Declaracion de las variables
+    let palabra1 = prompt("Escribe una palabra");
+    let palabra2 = prompt("Escribe otra palabra");
 
+//Declaracion de la funcion
+        function mismasLetras(palabra1, palabra2) {
+            for (var i = 0; i < palabra2.length; i++) {
+                if (palabra1.includes(palabra2[i])) {
+                    var contador = 1;
+                }
+            }
+            if (contador == 1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
 
+//Declaracion de la funcion resultado y llamada con callback
+        function resultado(palabra1, palabra2, callback) {
+            if (callback(palabra1,palabra2==true)) {
+                console.log("Son iguales");
+            } else {
+                console.log("Non son iguales");
+            }
+        }
+
+//Mostramos por pantalla el resultado
+        resultado(palabra1,palabra2,mismasLetras);
 
     </script>
 </body>
