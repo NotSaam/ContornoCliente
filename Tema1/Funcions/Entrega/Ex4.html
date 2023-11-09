@@ -3,11 +3,25 @@
 <title>Funciones</title>
 
 <body>
-    <h4>Crea unha función que reciba un array de 3x3 por parámetro e o devolva con todos os
-        elementos a 0 menos a diagonal principal. </h4>
+    <h4>Crea unha función que reciba un array de 3x3 por parámetro e o devolva con todos os elementos a 0 menos a diagonal principal. </h4>
     <script>
+        const matriz = [
+            [1,2,3],
+            [4,5,6],
+            [7,8,9]
+        ];
 
-
+        function matrizCeros(matriz){
+            for (let i = 0; i < 3; i++) {
+                for (let j = 0; j < 3; j++) {
+                    if (i !== j) {
+                        matriz[i][j] = 0;
+                    }
+                }
+            }
+            return matriz;
+    }
+        console.log(matrizCeros(matriz));
 
     </script>
 </body>
