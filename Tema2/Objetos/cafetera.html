@@ -33,12 +33,10 @@
                 this._cantidadActual = capacidadActual;
             }
 
-
             llenarCafetera() {
                 this._cantidadActual = this._capacidadMaxima;
                 console.log("Cafetera chea");
             }
-
 
             servirTaza(cantidad) {
                 if (cantidad <= this._cantidadActual) {
@@ -50,12 +48,10 @@
                 }
             }
 
-
             vaciarCafetera() {
                 this._cantidadActual = 0;
                 console.log("Cafetera vaciada.");
             }
-
 
             agregarCafe(cantidad) {
                 if (this._cantidadActual + cantidad <= this._capacidadMaxima) {
@@ -67,13 +63,13 @@
             }
         }
 
-
         let cafetera = new Cafetera();
         cafetera.llenarCafetera();
         cafetera.servirTaza(200);
         cafetera.agregarCafe(500);
         cafetera.servirTaza(800);
         cafetera.vaciarCafetera();
+
     </script>
 </body>
 

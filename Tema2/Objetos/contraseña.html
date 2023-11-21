@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<title>Funciones</title>
+
+<body>
+    <h1>Crea un objeto llamado usuario que permita autentificar a una persona que tiene que iniciar sesión en el sistema. Tendrá una ID y una contraseña:</h1>
+
+    <script>
+
+class User {
+    constructor(id, password) {
+        this.id = id;
+        this.password = password;
+    }
+}
+
+function autenticar(usuario) {
+    if (usuario.id === 'Samu' && usuario.password === 'abc123.') {
+        document.write('Autenticación exitosa. Bienvenido, ' + usuario.id + '!');
+    } else {
+        document.write('Autenticación fallida. Usuario o contraseña incorrectos.');
+    }
+}
+
+var id = prompt('Introduce tu ID de usuario:');
+var password = prompt('Introduce tu contraseña:');
+
+var usuario = new User(id, password);
+
+autenticar(usuario);
+
+    </script>
+
+</body>
+
+</html>
