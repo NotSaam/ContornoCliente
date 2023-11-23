@@ -1,80 +1,62 @@
-<!DOCTYPE html>
 <html>
-<title>Herencia</title>
+<title>Clases obj // Herencia</title>
+
 
 <body>
-    <h1>
-        Diseñar una jerarquía de clases que permita modelar los objetos
-        teléfono móvil y teléfono fijo de fomra que Teléfono sea la clase
-        madre y teléfono movil y teléfono fijo sean las clases derivadas.
-        Reconocer atributos necesarios para todas las clases.
-        Diseñar un método para contrastar el polimorfismo.
-    </h1>
-
+    <h1>Telefono</h1>
     <script>
+        /*Deseña unha xerarquía de clases modelar os obxectos  telefono fijo e telefono movil
+        de maneira que Telefono sexa a clase nai e telefono Fixo e Movil as derivadas.
+        Recolecer atributos necesarios para todas as clases.
+        Deseñar un método para contrastar o polimorfismo.
+        Despois de facelo cun so obxecto, pídese crear un array de 2 teléfonos móbiles ou fixos.
+        Cun for cargamos con outros imprimimos os datos*/
 
-class Telefono {
-    constructor(numero, marca,color,operador) {
-        this.numero = numero;
-        this.marca = marca;
-        this.color=color;
-        this.operador=operador;
-    }
+        class Telefono {
+            constructor(numero) {
+                this.numero = numero;
+            }
+            llamar() {
+                console.log(`Chamando desde ${this.numero}`);
+            }
+        }
 
-    llamar() {
-        console.log(`Llamando al número ${this.numero}`);
-    }
+        class telefonoFijo extends Telefono  {
+            constructor(numero, prefijo) {
+                super(numero);
+                this.prefijo = prefijo;
+            }
+            llamar() {
+                console.log(`Chamando desde ${this.prefijo}${this.numero} (telefono fijo)`);
+            }
+        }
 
-    mostrarTipo() {
-        console.log('Teléfono genérico');
-    }
-}
+        class telefonoMovil extends Telefono{
+            constructor(numero,operador){
+                super(numero);
+                this.operador=operador;
+            }
+            llamar(){
+                console.log(`Chamando desde ${this.numero} que é da compañía ${this.operador}`);
+            }
+        }
 
-class TelefonoMovil extends Telefono {
-    constructor(numero, marca, sistemaOperativo) {
-        super(numero, marca);
-        this.sistemaOperativo = sistemaOperativo;
-    }
+        //let llamada1 = new Telefono(123456789);
+        //llamada1.llamar();
+        //let llamada2 = new telefonoFijo(789864,981);
+        //llamada2.llamar();
+        //let llamada3 = new telefonoMovil(555555555, "Orange");
+        //llamada3.llamar();
 
-    navegar() {
-        console.log('Navegando por Internet');
-    }
-
-    // Método polimórfico
-    mostrarTipo() {
-        console.log('Teléfono Móvil');
-    }
-}
-
-class TelefonoFijo extends Telefono {
-    constructor(numero, marca, extension) {
-        super(numero, marca);
-        this.extension = extension;
-    }
-
-    recibirLlamada() {
-        console.log(`Recibiendo llamada en la extensión ${this.extension}`);
-    }
-
-    mostrarTipo() {
-        console.log('Teléfono Fijo');
-    }
-}
-
-const movil = new TelefonoMovil('123456789', 'Samsung', 'Android');
-const fijo = new TelefonoFijo('987654321', 'Panasonic', '101');
-
-movil.llamar();
-movil.navegar();
-movil.mostrarTipo();
-
-fijo.llamar();
-fijo.recibirLlamada();
-fijo.mostrarTipo();
+        const telefonos = [
+            new telefonoFijo(123456, 981),
+            new telefonoMovil(556987412, "Robafone")
+        ];
 
 
-
-
+        for (let i = 0; i < telefonos.length; i++) {
+            telefonos[i].llamar();
+        }
     </script>
 </body>
 
