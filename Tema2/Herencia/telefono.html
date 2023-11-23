@@ -3,9 +3,77 @@
 <title>Herencia</title>
 
 <body>
-    <h1>Deseñar unha xerarquía de cñases que clases </h1>
+    <h1>
+        Diseñar una jerarquía de clases que permita modelar los objetos
+        teléfono móvil y teléfono fijo de fomra que Teléfono sea la clase
+        madre y teléfono movil y teléfono fijo sean las clases derivadas.
+        Reconocer atributos necesarios para todas las clases.
+        Diseñar un método para contrastar el polimorfismo.
+    </h1>
 
     <script>
+
+class Telefono {
+    constructor(numero, marca,color,operador) {
+        this.numero = numero;
+        this.marca = marca;
+        this.color=color;
+        this.operador=operador;
+    }
+
+    llamar() {
+        console.log(`Llamando al número ${this.numero}`);
+    }
+
+    mostrarTipo() {
+        console.log('Teléfono genérico');
+    }
+}
+
+class TelefonoMovil extends Telefono {
+    constructor(numero, marca, sistemaOperativo) {
+        super(numero, marca);
+        this.sistemaOperativo = sistemaOperativo;
+    }
+
+    navegar() {
+        console.log('Navegando por Internet');
+    }
+
+    // Método polimórfico
+    mostrarTipo() {
+        console.log('Teléfono Móvil');
+    }
+}
+
+class TelefonoFijo extends Telefono {
+    constructor(numero, marca, extension) {
+        super(numero, marca);
+        this.extension = extension;
+    }
+
+    recibirLlamada() {
+        console.log(`Recibiendo llamada en la extensión ${this.extension}`);
+    }
+
+    mostrarTipo() {
+        console.log('Teléfono Fijo');
+    }
+}
+
+const movil = new TelefonoMovil('123456789', 'Samsung', 'Android');
+const fijo = new TelefonoFijo('987654321', 'Panasonic', '101');
+
+movil.llamar();
+movil.navegar();
+movil.mostrarTipo();
+
+fijo.llamar();
+fijo.recibirLlamada();
+fijo.mostrarTipo();
+
+
+
 
     </script>
 </body>
