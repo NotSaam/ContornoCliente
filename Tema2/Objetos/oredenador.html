@@ -20,25 +20,28 @@
     </h3>
 
     <script>
-    class Ordenador{
-        constructor(marca, modelo, pulgadas, memoria, disco){
-            this.marca = marca;
-            this.modelo = modelo;
-            this.pulgadas = pulgadas;
-            this.memoria = memoria;
-            this.disco = disco;
-            }
-                toString(){
-                return `<strong>Especificacións do equipo:<br></strong>`+
-                `<br><strong>Marca:</strong> ${this.marca}`+
-                `<br><strong>Modelo:</strong> ${this.modelo}`+
-                `<br><strong>Pulgadas:</strong> ${this.pulgadas}`+
-                `<br><strong>Memoria RAM:</strong> ${this.memoria} GB`+
-                `<br><strong>Disco duro:</strong> ${this.disco} GB`;
-            }
-            }
-            const meuOrdenador = new Ordenador("Asus","Rog",17.5,16,512);
-            document.write(meuOrdenador.toString());
+class Ordenador {
+    constructor() {
+        this.marca = prompt("Introduce la marca del ordenador:");
+        this.modelo = prompt("Introduce el modelo del ordenador:");
+        this.pulgadas = parseFloat(prompt("Introduce el tamaño en pulgadas:"));
+        this.memoria = parseInt(prompt("Introduce la memoria RAM en GB:"));
+        this.disco = parseInt(prompt("Introduce el tamaño del disco duro en GB:"));
+    }
+
+    toString() {
+        return `<strong>Especificaciones del equipo:<br></strong>` +
+            `<br><strong>Marca:</strong> ${this.marca}` +
+            `<br><strong>Modelo:</strong> ${this.modelo}` +
+            `<br><strong>Pulgadas:</strong> ${this.pulgadas}` +
+            `<br><strong>Memoria RAM:</strong> ${this.memoria} GB` +
+            `<br><strong>Disco duro:</strong> ${this.disco} GB`;
+    }
+}
+
+const miOrdenador = new Ordenador();
+document.write(miOrdenador.toString());
+
     </script>
 
 </body>
