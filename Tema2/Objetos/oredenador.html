@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<title>Funciones</title>
+
+<body>
+    <h3>Crear un objeto llamado ordenador que tenga los siguientes atributos:
+        marca, tipo texto
+        modelo, tipo texto,
+        memoria ram, numero entero con la capacidad en GB
+        capacidad de disco duro, numero entero que indica la capacidad en GB
+        pulgadas de pantalla, numero que indica las pulgadas
+
+        Métodos para este objeto:
+        toString, sirve para obtener de forma textual todos los datos de las
+        especificaciones.
+
+        Al crear un ordenador se pueden indicar todos los valores por defecto de
+        la siguiente forma:
+        17 pulgadas, 512GB de disco duro, 4GB de RAM. La marca y el modelo son necesarias.
+    </h3>
+
+    <script>
+    class Ordenador{
+        constructor(marca, modelo, pulgadas, memoria, disco){
+            this.marca = marca;
+            this.modelo = modelo;
+            this.pulgadas = pulgadas;
+            this.memoria = memoria;
+            this.disco = disco;
+            }
+                toString(){
+                return `<strong>Especificacións do equipo:<br></strong>`+
+                `<br><strong>Marca:</strong> ${this.marca}`+
+                `<br><strong>Modelo:</strong> ${this.modelo}`+
+                `<br><strong>Pulgadas:</strong> ${this.pulgadas}`+
+                `<br><strong>Memoria RAM:</strong> ${this.memoria} GB`+
+                `<br><strong>Disco duro:</strong> ${this.disco} GB`;
+            }
+            }
+            const meuOrdenador = new Ordenador("Asus","Rog",17.5,16,512);
+            document.write(meuOrdenador.toString());
+    </script>
+
+</body>
+
+</html>
