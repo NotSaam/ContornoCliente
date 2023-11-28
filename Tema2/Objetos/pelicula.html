@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<title>Ejercicio pelicula</title>
+
+<body>
+    <h3>
+        Crear un objeto pelicula que conteña os seguintes atributos: <br>
+        Director,un toString<br>
+        Data de lanzamiento,enteiro<br>
+        Actores,String<br>
+        Titulo,String<br>
+        Presuposto,decimal<br>
+        Permitense os seguintes contructores:<br>
+        Completo sen presuposto e sen data de lanzamiento(3 tipos)<br>
+        Implementar un metodo observador<br>
+        Implementar un metodo que comprobe a idade da pelicula<br>
+        O programa principal debe permitir recoller os datos por teclado ao usuario e imprimir todos os datos co observador.
+        Tamen debemos imprimir a idade da pelicula<br>
+    </h3>
+
+    <script>
+
+    class pelicula{
+        constructor(director,lanzamiento,actor,titulo,presuposto){
+            this.director=director;
+            this.lanzamiento=lanzamiento;
+            this.actor=actor;
+            this.titulo=titulo;
+            this.presuposto= presuposto;
+        }
+
+        toString(){
+            return `Director: ${this.director}\nFecha de lanzamiento: ${this.lanzamiento}\nActores: ${this.actor}\nTitulo: ${this.titulo}\nPresupuesto: ${this.presuposto}`;
+        }
+
+        observar(){
+            document.write(this.toString);
+        }
+
+
+
+
+        calcularEdad() {
+        if (!this.fechaLanzamiento) {
+            return "La fecha de lanzamiento no está disponible.";
+        }
+        const fechahoy=fechahoy;
+    }
+}
+
+    director = prompt("Introduce el nombre del director de la pelicula:");
+    lanzamiento = prompt("Introduce la fecha de lanzamiento de la pelicula ")
+    actor = prompt("Introduce el actor de la pelicula ")
+    titulo=prompt("Intro")
+    = prompt("Intro")
+
+}
+
+
+    </script>
+
+</body>
+
+</html>

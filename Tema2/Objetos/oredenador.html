@@ -3,7 +3,8 @@
 <title>Funciones</title>
 
 <body>
-    <h3>Crear un objeto llamado ordenador que tenga los siguientes atributos:
+    <h3>
+        Crear un objeto llamado ordenador que tenga los siguientes atributos:
         marca, tipo texto
         modelo, tipo texto,
         memoria ram, numero entero con la capacidad en GB
@@ -21,25 +22,20 @@
 
     <script>
 class Ordenador {
-    constructor() {
-        this.marca = prompt("Introduce la marca del ordenador:");
-        this.modelo = prompt("Introduce el modelo del ordenador:");
-        this.pulgadas = parseFloat(prompt("Introduce el tamaño en pulgadas:"));
-        this.memoria = parseInt(prompt("Introduce la memoria RAM en GB:"));
-        this.disco = parseInt(prompt("Introduce el tamaño del disco duro en GB:"));
+    constructor(marca, modelo, ram = 4, discoDuro = 512, pulgadasPantalla = 17) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.memoriaRam = ram;
+        this.capacidadDiscoDuro = discoDuro;
+        this.pulgadasPantalla = pulgadasPantalla;
     }
 
     toString() {
-        return `<strong>Especificaciones del equipo:<br></strong>` +
-            `<br><strong>Marca:</strong> ${this.marca}` +
-            `<br><strong>Modelo:</strong> ${this.modelo}` +
-            `<br><strong>Pulgadas:</strong> ${this.pulgadas}` +
-            `<br><strong>Memoria RAM:</strong> ${this.memoria} GB` +
-            `<br><strong>Disco duro:</strong> ${this.disco} GB`;
+        return `Marca: ${this.marca}\nModelo: ${this.modelo}\nMemoria RAM: ${this.memoriaRam}GB\nCapacidad de Disco Duro: ${this.capacidadDiscoDuro}GB\nPulgadas de Pantalla: ${this.pulgadasPantalla}"`;
     }
 }
 
-const miOrdenador = new Ordenador();
+const miOrdenador = new Ordenador("HP", "Pavilion");
 document.write(miOrdenador.toString());
 
     </script>
