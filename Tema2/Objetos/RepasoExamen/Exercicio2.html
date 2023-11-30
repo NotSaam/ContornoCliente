@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
-<title></title>
+  <title>Exercicio 2</title>
 
-<body>
+  <body>
     <h3></h3>
 
     <script>
+      /*
 // Definir la clase Poblacion
 class Poblacion {
     constructor(nombre, codigoPostal) {
@@ -24,11 +25,37 @@ var poblaciones = [
 // Recorrer y imprimir las propiedades de cada objeto
 for (var i = 0; i < poblaciones.length; i++) {
     var poblacion = poblaciones[i];
+
     document.write("Nombre: " + "<b>"+ poblacion.nombre + "</b>" + "<br>");
     document.write("Código Postal: " +"<b>"+ poblacion.codigoPostal +"</b>"+ "<br>");
     document.write("------------------------- <br>");
 }
-    </script>
-</body>
+*/
 
+      // Crear un array vacío para almacenar las poblaciones
+    var poblaciones = [];
+
+      // Solicitar al usuario que ingrese los datos de cada población
+    for (var i = 0; i < 3; i++) {
+        var nombre = prompt("Ingrese el nombre de la población:");
+        var codigoPostal = prompt("Ingrese el código postal de la población:");
+
+        // Crear un objeto poblacion con los datos ingresados y agregarlo al array
+        var poblacion = { nombre: nombre, codigoPostal: codigoPostal };
+        poblaciones.push(poblacion);
+    }
+
+      // Recorrer y imprimir las propiedades de cada objeto
+    for (var i = 0; i < poblaciones.length; i++) {
+        var poblacion = poblaciones[i];
+        var propiedades = Object.values(poblacion);
+
+        for (var j = 0; j < propiedades.length; j++) {
+            document.write(propiedades[j]+" ");
+        }
+
+        document.write("<br>-------------------------<br>");
+    }
+    </script>
+    </body>
 </html>
