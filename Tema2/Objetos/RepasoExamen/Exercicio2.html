@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<title></title>
+
+<body>
+    <h3></h3>
+
+    <script>
+// Definir la clase Poblacion
+class Poblacion {
+    constructor(nombre, codigoPostal) {
+    this.nombre = nombre;
+    this.codigoPostal = codigoPostal;
+    }
+}
+
+// Crear el array de objetos
+var poblaciones = [
+    new Poblacion("Madrid", "28001"),
+    new Poblacion("Barcelona", "08001"),
+    new Poblacion("Valencia", "46001")
+];
+
+// Recorrer y imprimir las propiedades de cada objeto
+for (var i = 0; i < poblaciones.length; i++) {
+    var poblacion = poblaciones[i];
+    document.write("Nombre: " + "<b>"+ poblacion.nombre + "</b>" + "<br>");
+    document.write("Código Postal: " +"<b>"+ poblacion.codigoPostal +"</b>"+ "<br>");
+    document.write("------------------------- <br>");
+}
+    </script>
+</body>
+
+</html>

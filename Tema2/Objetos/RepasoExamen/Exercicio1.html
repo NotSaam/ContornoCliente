@@ -24,26 +24,26 @@
 
         // Función para imprimir los valores de cada objeto
         function imprimirValores(objeto) {
-            console.log("Obxecto tipo: " + typeof objeto);
+            document.write("Obxecto tipo: " + typeof objeto);
 
             if (Array.isArray(objeto)) {
                 objeto.forEach((elemento, indice) => {
-                    console.log(
+                    document.write(
                         `${indice + 1} - ${elemento.dni} ${elemento.nome} ${elemento.apelidos
                         }`
                     );
                 });
             } else if (objeto instanceof Map) {
                 objeto.forEach((valor, clave) => {
-                    console.log(`${clave}-${valor}`);
+                    document.write(`${clave}-${valor}`);
                 });
             } else if (typeof objeto === "object") {
                 for (let clave in objeto) {
-                    console.log(`${clave}: ${objeto[clave]}`);
+                    document.write(`${clave}: ${objeto[clave]}`);
                 }
             }
 
-            console.log("");
+            document.write("");
         }
 
         // Imprimir los valores de cada objeto
