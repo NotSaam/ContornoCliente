@@ -1,76 +1,91 @@
 <!DOCTYPE html>
-<html>
-<title>Cafetera</title>
-
-<body>
-    <h1>Ejercicio de la cafetera</h1>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
     <script>
-        /* Desarrolla una clase Cafetera con atributos _capacidadMaxima (la cantidad máxima
-        de café que puede contener la cafetera) y _cantidadActual (la cantidad actual de café
-        que hay en la cafetera). Implementa, al menos, los siguientes métodos:
-        Constructor predeterminado: establece la capacidad máxima en 1000 (c.c.)
-        y la actual en cero (cafetera vacía).
-        Constructor con la capacidad máxima de la cafetera; inicializa la cantidad actual de
-        café igual a la capacidad máxima.
-        Constructor con la capacidad máxima y la cantidad actual. Si la cantidad actual es
-        mayor que la capacidad máxima de la cafetera, la ajustará al máximo.
+        class cafetera{
+            constructor(maximo, actual){
+                if(maximo == undefined && actual == undefined){
+                    this.capacidadeMaxima = 1000
+                    this.cantidadeActual = 0
+                }else if(actual == undefined){
+                    this.capacidadeMaxima = maximo
+                    this.cantidadeActual = 0
+                }else{
+                    if(actual > maximo){
+                        actual = maximo
+                    }
 
-        Métodos mutadores:
-        llenarCafetera(): pues eso, hace que la cantidad actual sea igual a la capacidad.
-        servirTaza(int): simula la acción de servir una taza con la capacidad indicada.
-        Si la cantidad actual de café “no alcanza” para llenar la taza, se sirve lo que quede.
-        vaciarCafetera(): pone la cantidad de café actual en cero.
-        agregarCafe(int): añade a la cafetera la cantidad de café indicada */
-
-
-        class Cafetera {
-            constructor(capacidadMaxima = 1000, capacidadActual = 0) {
-                if (capacidadActual  > capacidadMaxima) {
-                    cantidadActual = capacidadMaxima;
-                }
-                this._capacidadMaxima = capacidadMaxima;
-                this._cantidadActual = capacidadActual;
-            }
-
-            llenarCafetera() {
-                this._cantidadActual = this._capacidadMaxima;
-                console.log("Cafetera chea");
-            }
-
-            servirTaza(cantidad) {
-                if (cantidad <= this._cantidadActual) {
-                    this._cantidadActual -= cantidad;
-                    console.log(`Serviuse unha taza de ${cantidad}`);
-                } else {
-                    console.log('Non hai suficiente café.');
-                    this._cantidadActual = 0;
+                    this.capacidadeMaxima = maximo
+                    this.cantidadeActual = actual
                 }
             }
 
-            vaciarCafetera() {
-                this._cantidadActual = 0;
-                console.log("Cafetera vaciada.");
+            llenarCafetera(){
+                this.cantidadeActual = this.capacidadeMaxima
             }
 
-            agregarCafe(cantidad) {
-                if (this._cantidadActual + cantidad <= this._capacidadMaxima) {
-                    this._cantidadActual += cantidad;
-                    console.log(`Añadiuse ${cantidad}`);
-                } else {
-                    console.log("Non se pode añadir porque pasa a cantidade máxima.")
+            servirTaza(cantidade){
+                if(cantidade > this.cantidadeActual){
+                    console.log(`Como a cafetera non dispoñía de suficiente café, serviu ${this.cantidadeActual}ml`)
+                    this.cantidadeActual = 0
+                }else{
+                    console.log(`Serviuse unha taza de ${this.cantidadeActual}ml`)
+                    this.cantidadeActual -= cantidade
                 }
+            }
+
+            vaciarCafetera(){
+                this.cantidadeActual = 0
+            }
+
+            agregarCafe(cantidade){
+                if((cantidade + this.cantidadeActual) > this.capacidadeMaxima){
+                    console.log(`Co obxectivo de non desbordar a cafetera, enchiuse ata a súa capacidade máxima`)
+                    this.cantidadeActual = this.capacidadeMaxima
+                }else{
+                    this.cantidadeActual += cantidade
+                    console.log(`Engadironse ${cantidade}ml a cafetera. Ahora dispos de ${this.cantidadeActual}ml de café`)
+                }
+            }
+
+            mostrarCafe(){
+                console.log(`Capacidade Máxima: ${this.capacidadeMaxima}`)
+                console.log(`Cantidade Actual: ${this.cantidadeActual}`)
+                console.log(" ")
             }
         }
 
-        let cafetera = new Cafetera();
-        cafetera.llenarCafetera();
-        cafetera.servirTaza(200);
-        cafetera.agregarCafe(500);
-        cafetera.servirTaza(800);
-        cafetera.vaciarCafetera();
+        //Comprobación de que todo funciona de maneira correcta
+        let cafetera_vacia = new cafetera()
+        let cafetera_cap_maxima = new cafetera(500)
+        let cafetera_con_cafe = new cafetera(1500, 500)
 
+        cafetera_vacia.mostrarCafe()
+        cafetera_vacia.llenarCafetera()
+        cafetera_vacia.mostrarCafe()
+        cafetera_vacia.servirTaza(500)
+        cafetera_vacia.mostrarCafe()
+        cafetera_vacia.vaciarCafetera()
+        cafetera_vacia.mostrarCafe()
+        cafetera_vacia.agregarCafe(1500)
+        cafetera_vacia.mostrarCafe()
+        cafetera_vacia.vaciarCafetera()
+        cafetera_vacia.mostrarCafe()
+        cafetera_vacia.agregarCafe(500)
+        cafetera_vacia.mostrarCafe()
+        cafetera_vacia.servirTaza(1000)
+        cafetera_vacia.mostrarCafe()
+
+        cafetera_cap_maxima.mostrarCafe()
+        cafetera_con_cafe.mostrarCafe()
     </script>
-</body>
+</head>
+<body>
 
+</body>
 </html>
