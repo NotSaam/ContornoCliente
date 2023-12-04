@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<title>Exercicio 2</title>
+
+<body>
+    <h3>Exercicio 2:<br>
+        Dado o obxecto nave espacial de tipo Object que contén os seguintes atributos:<br>
+        • Lugar actual: string.<br>
+        • Seguinte destino: string.<br>
+        • Km percorridos: Decimal.<br>
+        Implementar os métodos para que arranque a nave dende o destino actual ao seguinte destino,
+        incorporando a distancia entre ambos puntos (algo arbitrario). Debe gardar o número de km
+        percorridos totais. Supoñemos que chega sempre ao destino.<br>
+        Corme------->Laxe 20km pois, teremos que engadir 20km aos km totais percorridos.<br>
+        Comprobar que a nave non é un obxecto mapa, e no caso de que non o sexa imprimir os
+        atributos (nome do atributo: valor), sen usar observadores. 2,5Ptos.<br>
+        <br>Saída do programa:<br>
+        Lugar actual: Corme<br>
+        Seguinte destino: Laxe<br>
+        Kmpercorridos: 15km.<br>
+        <br>RÚBRICA:<br>
+        Definición do obxecto: 1pto.<br>
+        O obxecto funciona e a lóxica do programa é correcta: 1 pto.<br>
+        Comproba e imprime os datos do obxecto: 0,5ptos.<br>
+    </h3>
+
+    <script>
+class NaveEspacial {
+    constructor(lugar_actual, siguiente_destino, km_percorridos = 0) {
+    this.lugar_actual = lugar_actual;
+    this.siguiente_destino = siguiente_destino;
+    this.km_percorridos = km_percorridos;
+    }
+
+    arrancar() {
+      // Simulación de cálculo de distancia entre lugares
+      const distancia = 20; // Distancia de 20 km
+
+      // Actualizar el lugar actual y los km recorridos
+    this.lugar_actual = this.siguiente_destino;
+    this.km_percorridos += distancia;
+    }
+}
+
+const nave = new NaveEspacial("Corme", "Laxe", 20);
+nave.arrancar();
+document.write("Lugar actual: ", nave.lugar_actual+ "<br>") ;
+document.write("Seguinte destino: ", nave.siguiente_destino+ "<br>");
+document.write("Km percorridos: ", nave.km_percorridos + "km");
+    </script>
+</body>
+
+</html>

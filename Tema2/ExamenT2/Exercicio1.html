@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<title>Exercicio 1</title>
+
+<body>
+    <h3>Exercicio :<br>
+        Crea un programa que xestione o almacén dunha empresa co seguinte funcionamento.<br>
+        Os produtos entran no almacén porque se compran a un provedor, nunha cantidade que se sumará
+        á cantidade actual do almacén dese produto.<br>
+        Os produtos saen do almacén facendo unha venta que quitará cantidade das existencias actuais.
+        Do produto interesa gardar:
+        Código, nome, provedor, existencias en almacén, última venta realizada e última compra
+        realizada.<br>
+        Un produto pode darse de alta no almacén sen ser mercado previamente (non precisa provedor, nin
+        cantidade) ou con todos os datos cubertos. (Múltiple construtor). As datas serán gardadas como
+        “string” e no caso de non telas, será a data actual o día hoxe. Ter en conta que ao crear este
+        produto, en todos os casos, as existencias actuais serán sempre 0.<br>
+        Os movementos de almacén sempre son mediante compras ou ventas.<br>
+        <br>
+        RÚBRICA:
+        Implementar o exercicio de tal forma que:<br>
+        1) Carguemos un só producto. (1pto).<br>
+        2) Carguemos 3 productos. Uso obrigatorio de array. (1pto)<br>
+        3) Vexamos os datos de todos os produtos almacenados. 1 (pto).<br>
+        a)Nome: o nome.<br>
+        b)Provedor: o provedor.<br>
+        c) Existencias actuais: Existencias no almacén.<br>
+        d) Data da última compra realizada<br>
+        </h3>
+
+    <script>
+
+//Creamos  e definimos a clase producto
+class Producto {
+    constructor(codigo, nombre, proveedor, existencias = 0, ultima_venta , ultima_compra) {
+    this.codigo = codigo;
+    this.nombre = nombre;
+    this.proveedor = proveedor;
+    this.existencias = existencias;
+    this.ultima_venta = ultima_venta;
+    this.ultima_compra = ultima_compra;
+}
+
+//Creamos un observador para mostrar un solo producto
+observador(){
+    document.write("Nombre: ", this.nombre + "<br>");
+    document.write("Proveedor: ",  this.proveedor+ "<br>");
+    document.write("Existencias actuales: ", this.existencias+ "<br>");
+    document.write("Fecha última compra: ", this.ultima_compra+ "<br>");
+    document.write("---------------------------------------------<br>");
+    document.write("<br>");
+}
+}
+
+  // Cargar un solo producto
+const producto1 = new Producto("001", "Zapatos", "Nike",23,"",'12/11/2023');
+document.write("Cargar solo un producto: <br>")
+producto1.observador();
+
+  // Cargar 3 productos usando un array
+const productos = [
+    new Producto("001", "Zapatos", "Nike",89,'30/05/2023 ','25/10/2023'),
+    new Producto("002", "Colonias", "Bustamante",76,'23/03/2023 ','12/01/2023'),
+    new Producto("003", "Bufanda", "Zara",12,'12/06/2020 ','01/04/2023')
+];
+console.log(productos);
+  // Ver los datos de todos los productos almacenados
+document.write("Impresion dos tres productos almacenados: <br>")
+productos.forEach(producto => {
+    document.write("Nombre: ", producto.nombre + "<br>");
+    document.write("Proveedor: ",  producto.proveedor+ "<br>");
+    document.write("Existencias actuales: ", producto.existencias+ "<br>");
+    document.write("Fecha última compra: ", producto.ultima_compra+ "<br>");
+    document.write("---------------------------------------------<br>");
+});
+
+    </script>
+</body>
+
+</html>

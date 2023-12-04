@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<title>Exercicio 3</title>
+
+<body>
+    <h3>Exercicio 3:<br>
+        Dada unha táboa de prezos de froita almacenada nun mapa nomefroita:prezo, escribir un programa
+        que pregunte ó usuario por unha froita e polo número de quilos que desexa comprar, e amose por
+        pantalla o prezo total que vai ter que pagar pola compra. 2,5Ptos.<br>
+        <br>A ter en conta.<br>
+        - O listado de prezos cargámolo nós de forma estática no programa, non hai que pedilos prezos, e
+        estes gárdanse nun mapa:<br>
+
+        Froita---------------- Prezo<br>
+        pera  ---------------- 1.25€<br>
+        manzana ---------- 1.70€<br>
+        kiwi ----------------- 2.90€<br>
+        mandarina ------- 1.19€<br>
+        fresa ---------------- 3.75€<br>
+        <br>RÚBRICA:<br>
+        • Amosamos o listado xeral de prezos cunha función. 0,5ptos.<br>
+        • O programa principal pide ao usuario o nome da froita a consultar e unha función dille se
+        esta existe ou non na táboa. No caso de que exista, devolverá o prezo da mesma. 1Pto.<br>
+        • Con esta función, o programa principal diralle ao usuario que prezo final terá que pagar
+        pola froita escollida ou se a froita non foi atopada no dicionario, neste caso, o programa
+        diralle que pida outra froita, que esa non existe. 1Pto.</h3>
+
+    <script>
+//Creamos un mapa con la tabla de precios
+const tabla_precios = new Map([
+["pera", 1.25],
+["manzana", 1.70],
+["kiwi", 2.90],
+["mandarina", 1.19],
+["fresa", 3.75]
+]);
+
+//Creamos una funcion usando el mapa de la tabla de precios para asi poder mostrar la tabla de precios al usuario
+function listadoPrecios() {
+    document.write("Tabla de precios de la Frutería Sam:<br>");
+tabla_precios.forEach((precio, fruta) => {
+    document.write(fruta + "----> " + precio+"€" + "<br>");
+});
+document.write("-------------------------------------<br>");
+}
+
+//Creamos la funcion de calcular el precio total para que nos realice el calculo de las frutas por el kilo que el usuario nos manda
+function calcularTotal(fruta, kilos) {
+if (tabla_precios.has(fruta)) {
+    const precio  = tabla_precios.get(fruta);
+    const precio_total = precio  * kilos;
+    document.write("<b>Precio total del pedido: </b>",precio_total + "€");
+} else {
+    document.write("<b>La fruta no existe en la tabla de precios. Por favor, elija otra fruta.</b>");
+}
+}
+
+//Llamamos a la funcion mostrarListadoPrecios que es la funcion que tiene la lista de precios
+listadoPrecios();
+
+//Creamos la variable fruta y kilos y utilizamos prompt para que el usuario nos introduzca su pedido
+const fruta = prompt("Ingrese el nombre de la fruta.\nActualmente solo disponemos de pera,manzana,kiwi,mandarina y fresa\nTrata de escribirlas en singular y en minusculas");
+const kilos = parseFloat(prompt("Ingrese la cantidad de kilos:"));
+
+
+//Llamamos a la funcion calcularPrecioTotal y le introducimos las variables fruta y kilos para que nos calcule automaticamente el precio del pedido
+document.write("Has comprado "+ kilos+"kg de "+fruta+ "<br>");
+calcularTotal(fruta, kilos);
+
+    </script>
+</body>
+
+</html>

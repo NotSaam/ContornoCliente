@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<title>Exercicio 4</title>
+
+<body>
+    <h3>EXERCICIO 4:<br>
+        Utilizando una función callback concatena dous textos e amosa o resultado eliminando espazos en
+        branco e todo o texto resultante e convertendo o mesmo a minúsculas.<br>
+        <br>RÚBRICA:<br>
+        Implementa a función callback 1pto.<br>
+        Fai a chamada de forma correcta dende o programa principal e utiliza unha terceira función<br>
+        para imprimir o resultado, utilizada pola función callback. 1Pto.<br></h3>
+
+    <script>
+    function concatenarTexto(texto1, texto2, imprimirResultado) {
+    const resultado = texto1.trim() + texto2.trim();
+    imprimirResultado(resultado.toLowerCase());
+}
+
+function imprimirTexto(texto) {
+    document.write(texto);
+}
+
+const texto1 = prompt("Introduce unha palabra");
+const texto2 = prompt("Introduce unha palabra");
+
+concatenarTexto(texto1, texto2, imprimirTexto);
+
+    </script>
+</body>
+
+</html>
