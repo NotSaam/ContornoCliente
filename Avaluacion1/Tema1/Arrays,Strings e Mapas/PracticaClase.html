@@ -8,6 +8,7 @@
     <script>
       /*let num1 = 2;
         let num2 = 3;
+        
         let suma = num1 + num2;
         console.log(suma);
         document.writeln(
@@ -434,7 +435,7 @@ switch (opcion) {
       for(let persona of  telefonos.keys())
       console.log (persona)
 */
-/* Has delete
+      /* Has delete
 const telefonos = new Map([
   [65184235698, "Blinho"],
   [98125485251, "Pablinho"]
@@ -444,7 +445,7 @@ telefonos.has(98125485251)
 console.log(telefonos)
 */
 
-/* Xerar con math.random mil numeros. Comprobar con que frecuencia aparecen os números do 1 ao 10. 
+      /* Xerar con math.random mil numeros. Comprobar con que frecuencia aparecen os números do 1 ao 10. 
 Debe imprimir 
 1 apareceu x veces 
 2 apareceu y veces
@@ -464,9 +465,9 @@ for (let numero = 1; numero <= 10; numero++) {
   const frecuenciaAparicion = frecuencia[numero] || 0; // Si el número no aparece, se establece en 0
   document.write(`${numero} apareceu ${frecuenciaAparicion} veces`);
 }
-*/ 
+*/
 
-/*Calcular o factorial dun numero
+      /*Calcular o factorial dun numero
 Exemplo
 5=5*4*3*2*1
 6=6*5*4*3*2*1
@@ -486,13 +487,13 @@ for (let i = 1; i <= numero; i++) {
 document.write(`El factorial de ${numero} es ${factorial}`);
 */
 
-/*Comprobar si dúas palabras forman parte do anagrama.
+      /*Comprobar si dúas palabras forman parte do anagrama.
 Estanco
 Acentos
 Son anagrmas porque se xeraron coas mesmas letras.
 */
 
-/*
+      /*
 //Palabras pedidas por pantalla
 let palabra=prompt('Introduce una palabra que deseas comprobar si es un anagrama');
 let palabra1=prompt('Introduce una palabra que deseas comprobar si es un anagrama');
@@ -510,14 +511,11 @@ if(palabra.length ==palabra1.length){
 }
 */
 
-const telefonos = new Map([
-       ["Blinho",3242622 ],
-       [98125485251, "Pablinho"]
+      const telefonos = new Map([
+        ["Blinho", 3242622],
+        [98125485251, "Pablinho"],
       ]);
-      for (let persona of telefonos.values())
-console.log(persona)
-
-
+      for (let persona of telefonos.values()) console.log(persona);
     </script>
   </body>
 </html>
