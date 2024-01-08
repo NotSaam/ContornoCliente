@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <title>Prototipo</title>
+
+  <body>
+    <h4>
+      Crear un prototipo para almacenar información sobre traballos realizados
+      por unha empresa de fontanería.<br />
+      Inicialmente:<br />
+      Descripcion do traballo<br />
+      Num de horas<br />
+      Precio das horas<br />
+      IVA<br />
+      Funcion que calcule o precio final do traballo realizado.<br />
+      Crear un traballo con valores solicitados por pantalla.<br />
+      Imprimir datos completos do traballo co precio final<br />
+      Engadir un novo atributo para engadir a data de pago<br />
+      Imprimir de novo o resultado<br />
+    </h4>
+
+    <script>
+      function fontanería(descri, numHoras, preciHoras, iva) {
+        this.descri = descri;
+        this.numHoras = numHoras;
+        this.preciHoras = preciHoras;
+        this.iva = iva;
+
+        this.info = function () {
+          document.write(`Descripcion: ${this.descri}`);
+          document.write(`Numero de horas: ${this.numHoras}`);
+          document.write(`Precio de horas: ${this.preciHoras}`);
+          document.write(`IVA: ${this.iva}`);
+        };
+      }
+
+      //Solicitud de datos
+      var descripcion = prompt("Introduce unha descripcion do traballo");
+      var numero_Horas = prompt("Introduce o numero de horas");
+      var precio_Horas = prompt("Introduce o precio das horas");
+      var iva = prompt("Introduce o IVA");
+
+      let traballo1 = new fontanería(
+        descripcion,
+        numero_Horas,
+        precio_Horas,
+        iva
+      );
+
+      document.write(fontanería.prototype);
+      fontanería.prototype.precio = function () {
+        return numero_Horas * precio_Horas;
+      };
+
+      console.log(fontanería.prototype);
+      fontanería.prototype.precioFinal = function () {
+        return precio * iva;
+      };
+
+      document.write(fontanería.prototype);
+    </script>
+  </body>
+</html>
