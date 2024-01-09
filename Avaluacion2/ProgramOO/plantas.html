@@ -16,29 +16,71 @@
     </h4>
 
     <script>
-      // Definir constructor para la especie de planta
-      function Planta(nome, especie, orixe, estacionDePoda, estacionDeXermen) {
-        this.nome = nome;
-        this.especie = especie;
-        this.orixe = orixe;
-        this.estacionDePoda = estacionDePoda;
-        this.estacionDeXermen = estacionDeXermen;
-      }
+      // Crear un objeto JSON que representa una especie de planta
+      var plantaJSON = {
+        Nome: "Tulipan",
+        Especie: "Flor",
+        Orixe: "Laxe",
+        Estacion_Poda: "Invierno",
+        Estacion_Xermen: "Otoño",
+      };
 
-      // Crear una instancia de la especie de planta
-      var planta1 = new Planta(
-        "Nombre de la planta 1",
-        "Especie de la planta 1",
-        "Origen de la planta 1",
-        "Estación de poda de la planta 1",
-        "Estación de germinación de la planta 1"
+      // Crear un objeto a partir del JSON
+      var planta = plantaJSON;
+
+      // Imprimir los atributos del objeto
+      document.write("Nombre: " + planta.Nome + "<br>");
+      document.write("Especie: " + planta.Especie + "<br>");
+      document.write("Origen: " + planta.Orixe + "<br>");
+      document.write("Estación de poda: " + planta.Estacion_Poda + "<br>");
+      document.write(
+        "Estación de germinación: " + planta.Estacion_Xermen + "<br>"
       );
 
-      // Convertir la instancia a JSON
-      var plantaJSON = JSON.stringify(planta1);
+      // Crear un objeto array de 3 plantas
+      var arrayPlantas = [
+        {
+          Nome: "Cactus",
+          Especie: "Cactusero",
+          Orixe: "Desert",
+          "Estacion de poda": "Verano",
+          "Estacion de xermen": "Invierno",
+        },
+        {
+          Nome: "Fieita",
+          Especie: "Fieitus",
+          Orixe: "Baio",
+          "Estacion de poda": "Otoño",
+          "Estacion de xermen": "Verano",
+        },
+        {
+          Nome: "Ficus",
+          Especie: "Ficusinnus",
+          Orixe: "Zas",
+          "Estacion de poda": "Primavera",
+          "Estacion de xermen": "Verano",
+        },
+      ];
 
-      // Imprimir el objeto JSON en el documento HTML
-      document.write(plantaJSON);
+      for (var i = 0; i < 3; i++) {
+        planta[i].Nome = prompt();
+        planta[i].Especie = prompt();
+        planta[i].Orixe = prompt();
+        planta[i].Estacion_Poda = prompt();
+        planta[i].Estacion_Xermen = prompt();
+      }
+
+      var planta = [];
+
+      for (var i = 0; i < 3; i++) {
+        document.write(planta[i].Nome);
+        document.write(planta[i].Especie);
+        document.write(planta[i].Orixe);
+        document.write(planta[i].Estacion_Poda);
+        document.write(planta[i].Estacion_Xermen);
+      }
+      // Imprimir el array de plantas
+      document.write(arrayPlantas);
     </script>
   </body>
 </html>
