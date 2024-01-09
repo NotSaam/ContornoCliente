@@ -12,8 +12,21 @@
     </h4>
 
     <script>
-    
-    
+    function fontanería(descri, numHoras, preciHoras, iva) {
+        this.descri = descri;
+        this.numHoras = numHoras;
+        this.preciHoras = preciHoras;
+        this.iva = iva;
+
+        this.info = function () {
+          document.write(`Descripcion: ${this.descri}`);
+          document.write(`Numero de horas: ${this.numHoras}`);
+          document.write(`Precio de horas: ${this.preciHoras}`);
+          document.write(`IVA: ${this.iva}`);
+        };
+      };
+
+
     </script>
 </body>
 
