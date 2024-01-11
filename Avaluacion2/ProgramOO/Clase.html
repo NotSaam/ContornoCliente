@@ -6,7 +6,7 @@
     <h4>Prototipos</h4>
 
     <script>
-      function Viaje(origen, destino, dias, precio) {
+      /*       function Viaje(origen, destino, dias, precio) {
         this.origen = origen;
         this.destino = destino;
         this.dias = dias;
@@ -27,6 +27,13 @@
 
       Viaje.prototype.descuento = "20%";
       console.log(Viaje.prototype);
+*/
+
+      let erObjeto = new RegExp("[0-9]");
+      console.log(erObjeto.test("a"));
+      console.log(erObjeto.test("almamia"));
+      console.log(erObjeto.test("alma66Mia"));
+      console.log(erObjeto.test("987"));
     </script>
   </body>
 </html>
