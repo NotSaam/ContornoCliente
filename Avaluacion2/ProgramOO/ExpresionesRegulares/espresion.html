@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<title>Expresión Regular</title>
+
+<body>
+    <h4>Ejercicio
+    Crear expresion regulares para:
+    </h4>
+
+    <script>
+
+//Expresion que solo acepte numeros de 0 a 4
+    let erNumero = new RegExp (/^[1-4]$/);
+    console.log(erNumero.test("33"));
+    console.log(erNumero.test("3"));
+       
+//Expresión que solo permita que as cadenas comencen por mayuscula
+    let erMayus = new RegExp (/^([A-Z])/);
+    console.log(erMayus.test("Anxo"));
+    console.log(erMayus.test("manuel"));
+
+
+//Expresion para recibir cadenas que finalicen por "dw"
+    let erRemate = new RegExp (/(.*)dw$/);
+    console.log(erRemate.test("DEw"));
+    console.log(erRemate.test("dw"))
+
+
+//Impedir que se reciban numeros que contengan 0
+    let erNoCero = new RegExp(/[^1-9]/);
+    console.log(erNoCero.test("56789"));
+    console.log(erNoCero.test("056789"));
+    </script> 
+    
+</body>
+</html>
+
