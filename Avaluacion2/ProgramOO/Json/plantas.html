@@ -1,86 +1,57 @@
 <!DOCTYPE html>
-<html>
-  <title>Ejercicio4</title>
-
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
   <body>
-    <h4>
-      Crea un obxecto json que represente especies de prantas cos seguintes
-      atributos:<br />
-      Nome:<br />
-      Especie:<br />
-      Orixe:<br />
-      Estacion de poda:<br />
-      Estacion de xermen<br />
-      Unha vez en js, crea un obxecto e imprimir os atributos.<br />
-      Crea un obxecto array de 3 prantas<br />
-    </h4>
-
     <script>
-      // Crear un objeto JSON que representa una especie de planta
-      var plantaJSON = {
-        Nome: "Tulipan",
-        Especie: "Flor",
-        Orixe: "Laxe",
-        Estacion_Poda: "Invierno",
-        Estacion_Xermen: "Otoño",
+      var planta =
+        '{"nome":"Cactus", "especie":"crassa", "orixe":"Mohave","Estacion_Xermen":"veran", "estacion_poda":"nonten"}';
+      var plantuka = JSON.parse(planta);
+      plantuka.gravarDatos = function (
+        nome,
+        especie,
+        orixe,
+        estacionxer,
+        estacionpo
+      ) {
+        this.nome = nome;
+        this.especie = especie;
+        this.orixe = orixe;
+        this.Estacion_Xermen = estacionxer;
+        this.estacion_poda = estacionpo;
       };
-
-      // Crear un objeto a partir del JSON
-      var planta = plantaJSON;
-
-      // Imprimir los atributos del objeto
-      document.write("Nombre: " + planta.Nome + "<br>");
-      document.write("Especie: " + planta.Especie + "<br>");
-      document.write("Origen: " + planta.Orixe + "<br>");
-      document.write("Estación de poda: " + planta.Estacion_Poda + "<br>");
-      document.write(
-        "Estación de germinación: " + planta.Estacion_Xermen + "<br>"
-      );
-
-      // Crear un objeto array de 3 plantas
-      var arrayPlantas = [
-        {
-          Nome: "Cactus",
-          Especie: "Cactusero",
-          Orixe: "Desert",
-          "Estacion de poda": "Verano",
-          "Estacion de xermen": "Invierno",
-        },
-        {
-          Nome: "Fieita",
-          Especie: "Fieitus",
-          Orixe: "Baio",
-          "Estacion de poda": "Otoño",
-          "Estacion de xermen": "Verano",
-        },
-        {
-          Nome: "Ficus",
-          Especie: "Ficusinnus",
-          Orixe: "Zas",
-          "Estacion de poda": "Primavera",
-          "Estacion de xermen": "Verano",
-        },
-      ];
-
+      plantuka.verDatos = function () {
+        document.write(this.nome + "<br>");
+        document.write(this.especie + "<br>");
+        document.write(this.orixe + "<br>");
+        document.write(this.Estacion_Xermen + "<br>");
+        document.write(this.estacion_poda + "<br>");
+      };
+      plantuka.verDatos();
+      var plantuka1 = [];
       for (var i = 0; i < 3; i++) {
-        planta[i].Nome = prompt();
-        planta[i].Especie = prompt();
-        planta[i].Orixe = prompt();
-        planta[i].Estacion_Poda = prompt();
-        planta[i].Estacion_Xermen = prompt();
+        var nuevaPlanta = Object.create(plantuka);
+        nome = prompt("introduce o nome da planta");
+        especie = prompt("introduce especie");
+        orixe = prompt("orixe?");
+        Estacion_Xermen = prompt(" en que estacion xermina?");
+        estacion_poda = prompt("estacion de poda?");
+        nuevaPlanta.gravarDatos(
+          nome,
+          especie,
+          orixe,
+          Estacion_Xermen,
+          estacion_poda
+        );
+        plantuka1.push(nuevaPlanta);
       }
-
-      var planta = [];
-
       for (var i = 0; i < 3; i++) {
-        document.write(planta[i].Nome);
-        document.write(planta[i].Especie);
-        document.write(planta[i].Orixe);
-        document.write(planta[i].Estacion_Poda);
-        document.write(planta[i].Estacion_Xermen);
+        document.write("Planta: " + i + "<br>");
+        plantuka1[i].verDatos();
       }
-      // Imprimir el array de plantas
-      document.write(arrayPlantas);
     </script>
   </body>
 </html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <title>ejercicio persona</title>
+
+  <body>
+    <h4>
+      Partindo dun obxecto json cos seguintes datos: <br />
+      Nome:Fer<br />
+      Apellidos:Alo <br />
+      Idade:33 <br />
+      Convertilo a un obxecto de JS<br />
+      Antes de imprimir engade, mediante patros unha nova funcion a ese obxecto
+      chamada verInfo para imprimir os datos do obxecto JSON<br />
+      A continuacion,crear un array para engadir 2 personas nova Sera necesario
+      unha nova funcion engadirDatos(nome,apellidos,idade)<br />
+      Finalmente recorre o array e imprime os datos das personas da seguinte
+      forma:<br />
+      Persona 1: <br />
+      Imprimes todos os datos da persona1 <br />
+      Persoa 2: <br />
+      Imprimes todos os datos da persoa2<br />
+    </h4>
+
+    <script>
+      var persona = '{"nome":"Fer", "apellidos":"Alo","idade":"33"}';
+      var p1 = JSON.parse(persona);
+
+      p1.gravarDatos = function (nome, apellidos, idade) {
+        this.nome = nome;
+        this.apellidos = apellidos;
+        this.idade = idade;
+      };
+
+      p1.verDatos = function () {
+        document.write(this.nome + "<br>");
+        document.write(this.apellidos + "<br>");
+        document.write(this.idade + "<br>");
+      };
+
+      p1.verDatos();
+
+      var personal = [];
+    </script>
+  </body>
+</html>

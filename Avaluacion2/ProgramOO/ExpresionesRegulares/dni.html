@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html>
-<title>Comprobacion de ejercicios</title>
+  <title>Comprobacion de ejercicios</title>
 
-<body>
+  <body>
     <h4>Comprobacion de ejercicios</h4>
 
     <script>
-//Expresion regular para comprobar un dni de una empresa
-        let DNI= /^[0-9]{8}[A-Z]{1}/i;
-        console.log(DNI.test("49202184D"));
+      //Expresion regular para comprobar un dni de una empresa
+      let DNI = /^[0-9]{8}[A-Z]{1}/i;
+      console.log(DNI.test("49202184D"));
 
+      //Expresion regular para comprobar un cif de una empresa
+      let cif = /^[A-Z]{1}[0-9]{8}$/i;
+      console.log(cif.test("A87878787"));
 
-//Expresion regular para comprobar un cif de una empresa
-        let cif = /^[A-Z]{1}[0-9]{8}$/i
-        console.log(cif.test("A87878787"));
+      //Expresion regular para comprobar un CP
+      let cp = /^[0-9]{5}$/;
+      console.log(cp.test("O98745698"));
 
-//Expresion regular para comprobar un CP 
-        let cp =/^[0-9]{5}$/;
-        console.log(cp.test("O98745698"));
+      //Expresión regular que non permita numeros
+      let cadena = /^[^0-9]*$/;
+      console.log(cadena.test("Ola"));
 
-//Expresión regular que non permita numeros
-        let cadena = /^[^0-9]*$/;
-        console.log(cadena.test("Ola"));
-
-//Expresion regular para comprobar email
-        let email = /[]/;
-        console.log(email.test("askjdhasd"));
+      //Expresion regular para comprobar email
+      let email = /^[a-z0-9.]+@[a-z0-9.]+\.[a-z]{2,4}$/i;
+      console.log(email.test("askjdhasd"));
     </script>
-</body>
-
+  </body>
 </html>
