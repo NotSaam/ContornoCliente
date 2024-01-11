@@ -22,24 +22,44 @@
     </h4>
 
     <script>
-      var persona = '{"nome":"Fer", "apellidos":"Alo","idade":"33"}';
-      var p1 = JSON.parse(persona);
+      //Creamos o obxeto json
+      var persona = '{"nome":"Pepe", "apelidos":"Sanchez", "idade":"34"}';
 
-      p1.gravarDatos = function (nome, apellidos, idade) {
+      //Pasamolo de json a objeto
+      var person = JSON.parse(persona);
+
+      //Creamos dos funciones, para engadir datos e para ver a info
+      person.engadirDatos = function (nome, apelidos, idade) {
         this.nome = nome;
-        this.apellidos = apellidos;
+        this.apelidos = apelidos;
         this.idade = idade;
       };
-
-      p1.verDatos = function () {
+      person.verInfo = function () {
         document.write(this.nome + "<br>");
-        document.write(this.apellidos + "<br>");
+        document.write(this.apelidos + "<br>");
         document.write(this.idade + "<br>");
       };
 
-      p1.verDatos();
+      //Comprobamos a informacion
+      person.verInfo();
 
-      var personal = [];
+      //Creamos un array para añadir dous obxetos
+      var personas = [];
+
+      //Creamos dous obxetos cun for e pedindo os datos por pantalla
+      for (var i = 0; i < 2; i++) {
+        var nuevaPersona = Object.create(person);
+        nome = prompt("introduce o nome");
+        apelidos = prompt("introduce o apelido");
+        idade = prompt("idade");
+        nuevaPersona.engadirDatos(nome, apelidos, idade);
+        personas.push(nuevaPersona);
+      }
+      //Sacamos a informacion dos dous obxetos creados anteriormente
+      for (var i = 0; i < 2; i++) {
+        document.write("<br>Persona: " + (i + 1) + "<br>");
+        personas[i].verInfo();
+      }
     </script>
   </body>
 </html>
