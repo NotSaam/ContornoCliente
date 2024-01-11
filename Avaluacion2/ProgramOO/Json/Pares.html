@@ -19,9 +19,15 @@
     <script>
       var numeros = [1, 2, 3, 4];
 
-      function obterPares(){
-        if
-      }
+      Array.prototype.obterPares = function () {
+        for (let i = 0; i <= this.length; i++) {
+          if (this[i] % 2 == 0) {
+            document.write("El numero " + this[i] + " es par<br>");
+          }
+        }
+      };
+
+      numeros.obterPares();
     </script>
   </body>
 </html>
