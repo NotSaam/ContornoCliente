@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <title>Boton</title>
+
+  <body>
+    <h4>Boton</h4>
+
+    <button id="boton01">Dame un clic</button>
+
+    <script>
+      /*      "use strict";
+      function manej_boton01() {
+        console.log("Clic recibido.");
+      }
+      let b = document.querySelector("#boton01");
+      // Atenci´on a la almohadilla, es imprescindible
+      b.addEventListener("click", manej_boton01);
+      // Atajo para ver los log: F12
+      // Atajo alternativo: Ctr Shift I  */
+
+      "use strict";
+      function manej_boton01(event) {
+        var body = document.body;
+        body.style.background = "lightgrey";
+      }
+      let b = document.querySelector("#boton01");
+      // Atenci´on a la almohadilla, es imprescindible
+      b.addEventListener("click", manej_boton01);
+      // Atajo para ver los log: F12
+      // Atajo alternativo: Ctr Shift I
+    </script>
+  </body>
+</html>

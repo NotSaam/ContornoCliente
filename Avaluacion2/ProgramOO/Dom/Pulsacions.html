@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <title>Pulsaciones</title>
+
+  <body>
+    <h4>
+      Ejercicios de pulsaciones<br />
+      Crear un contador de pulsacions.<br />
+      Debemos levar conta do número de clicks realizados sobre un botón<br />
+    </h4>
+
+    <button id="boton">Dame un clic</button>
+    <p id="contador"></p>
+
+    <script type="text/javascript">
+      var botonElement = document.querySelector("#boton");
+      var pElement = document.querySelector("#contador");
+      var contador = 0;
+      botonElement.addEventListener("click", contarClick);
+
+      function contarClick() {
+        if (contador < 10) {
+          contador++;
+          pElement.textContent = contador;
+          if (contador == 10) {
+            document.querySelector("#contador").style.color = "red";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
