@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <title>Pulsaciones</title>
+
+  <body>
+    <h4>
+      Ejercicios de pulsaciones<br />
+      Crear un contador de pulsacions.<br />
+      Debemos levar conta do número de clicks realizados sobre un botón<br />
+    </h4>
+
+    <p id="contador"></p>
+    <button id="sumar">sumar</button>
+    <button id="restar">restar</button>
+
+    <script type="text/javascript">
+      var botonSumar = document.querySelector("#sumar");
+      var botonRestar = document.querySelector("#restar");
+      var ptext = document.querySelector("#texto");
+      var contador = 0;
+      botonSumar.addEventListener("click", manej_sumar);
+      botonRestar.addEventListener("click", manej_restar);
+
+      function manej_sumar() {
+        if (contador < 10) {
+          contador++;
+          ptext.textContent = contador;
+          if (contador == 10) {
+            document.querySelector("#texto").style.color = "red";
+          } else {
+            document.querySelector("#texto").style.color = "black";
+          }
+        }
+      }
+
+      function manej_restar() {
+        if (contador < 10) {
+          contador++;
+          ptext.textContent = contador;
+          if (contador == 10) {
+            document.querySelector("#texto").style.color = "red";
+          } else {
+            document.querySelector("#texto").style.color = "black";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
