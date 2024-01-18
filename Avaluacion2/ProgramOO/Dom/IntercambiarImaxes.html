@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercicios Repaso</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        width: 100%;
+        display: flex;
+      }
+
+      .div1,
+      .div2 {
+        width: 50%;
+      }
+
+      .div1 img,
+      .div2 img {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p id="texto"></p>
+    <div class="container">
+      <div class="div1" id="div1">
+        <img src="./img/racingFerrol.PNG" id="foto1" />
+      </div>
+      <div class="div2" id="div2">
+        <img src="./img/deportivo.PNG" id="foto2" />
+      </div>
+    </div>
+    <script>
+      "use strict";
+      function cambiar() {
+        let foto1 = document.querySelector("#foto1");
+        let foto2 = document.querySelector("#foto2");
+        foto1.src = "./img/deportivo.png";
+        foto2.src = "./img/racingFerrol.png";
+      }
+
+      function reset() {
+        let foto1 = document.querySelector("#foto1");
+        let foto2 = document.querySelector("#foto2");
+        foto1.src = "./img/racingFerrol.png";
+        foto2.src = "./img/deportivo.png";
+      }
+
+      let rojo = document.querySelector("#div1");
+      let azul = document.querySelector("#div2");
+
+      rojo.addEventListener("mouseover", cambiar);
+      rojo.addEventListener("mouseout", reset);
+    </script>
+  </body>
+</html>
