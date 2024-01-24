@@ -1,62 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <title></title>
+  <title>Insertar fotos</title>
 
+  <h4>
+    Crear unha tabla que esté composta de 6 imaxes que se irán gregando a cada
+    celda.<br />
+    Partimos dunha tabla sen ningunha imaxe co título imaxes de pobos da
+    costa.<br />
+    A tabla terá solo 6 elementos. <br />
+    Para poder agregar novas imaxes debenmos de borrar antes unha. <br />
+    Pedimos o nombre da imaxe por prompt.<br />
+  </h4>
   <body>
-    <h4>
-      Crear unha tabla que esté composta de 6 imaxes que se irán gregando a cada
-      celda.<br />
-      Partimos dunha tabla sen ningunha imaxe co título imaxes de pobos da
-      costa.<br />
-      A tabla terá solo 6 elementos. <br />
-      Para poder agregar novas imaxes debenmos de borrar antes unha. <br />
-      Pedimos o nombre da imaxe por prompt.<br />
-    </h4>
-    <body>
-        <button id="boton01">Incrementar lista</button>
-        <button id="boton02">Borrar ultimo elemento</button>
-        <button id="boton03">Insertar</button>
-        <ol id="listaOrdenada"></ol>
-        <script>
-            let contador = 1;
-            let incrementarLista = document.querySelector("#boton01");
-            incrementarLista.addEventListener("click", manej_boton01);
-    
-    
-            let borrarUltimaLista = document.querySelector("#boton02");
-            borrarUltimaLista.addEventListener("click", manej_boton02);
-    
-    
-            let insertarElemento = document.querySelector("#boton03");
-            insertarElemento.addEventListener("click", manej_boton03);
-    
-    
-            function manej_boton01() {
-                let nuevoElemento = document.createElement("li");
-                nuevoElemento.textContent = contador;
-                listaOrdenada.append(nuevoElemento);
-                contador++;
-            }
-    
-    
-            function manej_boton02() {
-                let lista = document.querySelectorAll("ol li"); // Obtener la lista
-    
-    
-                if (lista.length > 0) {
-                    let ultimoElemento = lista[lista.length - 1]; // Obtener el último elemento
-                    ultimoElemento.remove();
-                    contador--;
-                }
-            }
-    
-    
-            function manej_boton03(){
-              let dato=prompt('Introduce o numero: ');
-              let novoElemento = document.createElement("li");
-              novoElemento.textContent = dato;
-              listaOrdenada.append(novoElemento);
-            }
-</script>
-</body>
+    <button id="boton01">Incrementar lista</button>
+    <button id="boton02">Borrar ultimo elemento</button>
+    <button id="boton03">Insertar</button>
+    <ol id="listaOrdenada"></ol>
+    <script>
+      let contador = 1;
+      let incrementarLista = document.querySelector("#boton01");
+      incrementarLista.addEventListener("click", manej_boton01);
+
+      let borrarUltimaLista = document.querySelector("#boton02");
+      borrarUltimaLista.addEventListener("click", manej_boton02);
+
+      let insertarElemento = document.querySelector("#boton03");
+      insertarElemento.addEventListener("click", manej_boton03);
+
+      function manej_boton01() {
+        let nuevoElemento = document.createElement("li");
+        nuevoElemento.textContent = contador;
+        listaOrdenada.append(nuevoElemento);
+        contador++;
+      }
+
+      function manej_boton02() {
+        let lista = document.querySelectorAll("ol li"); // Obtener la lista
+
+        if (lista.length > 0) {
+          let ultimoElemento = lista[lista.length - 1]; // Obtener el último elemento
+          ultimoElemento.remove();
+          contador--;
+        }
+      }
+
+      function manej_boton03() {
+        let dato = prompt("Introduce o nombre da imaxen: ");
+        let novoElemento = document.createElement("li");
+        novoElemento.textContent = dato;
+        listaOrdenada.append(novoElemento);
+      }
+    </script>
+  </body>
 </html>
