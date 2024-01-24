@@ -8,21 +8,39 @@
       forma ao pulsar un botón "INCREMENTAR LISTA"<br />
       1. 1 <br />
       2. 2 <br />
-      3.3 <br />
+      3. 3 <br />
 
       Teremos un segundo boton que sirva para borrar elementos da lista, cada
-      vez que o pulsemos,eliminará o ultimo elementos da lista 1. 1 <br />
+      vez que o pulsemos,eliminará o ultimo elementos da lista <br />
+      1. 1 <br />
       2. 2 <br />
+      Insertar un elemento solicitado por teclado o usuario.
     </h4>
-
-    <button id="boton1">INCREMENTAR LISTA</button>
-    <ol id="lista"></ol>
+    <button id="boton01">Incrementar lista</button>
+    <button id="boton02">Borrar ultimo elemento</button>
+    <ol id="listaOrdenada"></ol>
     <script>
-      var contador = 0;
-      var boton = document.querySelector("#boton1");
+      let contador = 1;
+      let incrementarLista = document.querySelector("#boton01");
+      incrementarLista.addEventListener("click", manej_boton01);
 
-      function manej_boton1() {
-        let lista = docum;
+      let borrarUltimaLista = document.querySelector("#boton02");
+      borrarUltimaLista.addEventListener("click", manej_boton02);
+
+      function manej_boton01() {
+        let nuevoElemento = document.createElement("li");
+        nuevoElemento.textContent = contador;
+        listaOrdenada.append(nuevoElemento);
+        contador++;
+      }
+
+      function manej_boton02() {
+        let lista = document.querySelectorAll("ol li"); // Obtener la lista
+
+        if (lista.length > 0) {
+          let ultimoElemento = lista[lista.length - 1]; // Obtener el último elemento
+          ultimoElemento.remove();
+        }
       }
     </script>
   </body>
