@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pulsador</title>
+
+    <style>
+      img {
+        display: block;
+        width: 200px;
+        height: 200px;
+      }
+
+      table {
+        padding: 0px;
+        border-collapse: collapse;
+      }
+
+      th {
+        padding: 0px;
+        width: 200px;
+      }
+
+      td {
+        padding: 0px;
+        width: fit-content;
+        height: fit-content;
+      }
+
+      #engadir_gato {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="engadir_gato">Engadir Imaxen</button>
+    <table id="tabla" border="1">
+      <tr>
+        <th>Imaxen Col 1</th>
+        <th>Imaxen Col 2</th>
+        <th>Imaxen Col 3</th>
+      </tr>
+    </table>
+
+    <script>
+      let tabla = document.querySelector("#tabla");
+
+      function engadirImaxen() {
+        let imagen = 0;
+        do {
+          imagen = parseInt(
+            prompt("Introduce o número da imaxe a engadir: 1-6")
+          );
+        } while (imagen < 1 || imagen > 6);
+
+        let filas = tabla.querySelectorAll("tr");
+
+        if (filas.length == 1) {
+          let tr = document.createElement("tr");
+          tabla.append(tr);
+          filas = tabla.querySelectorAll("tr");
+        }
+
+        if (filas.length == 2) {
+          let columnas = filas[1].querySelectorAll("td");
+
+          if (columnas.length < 3) {
+            let td = document.createElement("td");
+            let img = document.createElement("img");
+            img.src = `img/escudo${imagen}.jpg`;
+            td.append(img);
+            td.addEventListener("click", borrarColumna);
+            filas[1].append(td);
+          } else {
+            let tr = document.createElement("tr");
+            tabla.append(tr);
+            filas = tabla.querySelectorAll("tr");
+          }
+        }
+
+        if (filas.length == 3) {
+          let columnas = filas[2].querySelectorAll("td");
+
+          if (columnas.length < 3) {
+            let td = document.createElement("td");
+            let img = document.createElement("img");
+            img.src = `imag/escudo${imagen}.PNG`;
+            td.append(img);
+            td.addEventListener("click", borrarColumna);
+            filas[2].append(td);
+          }
+        }
+
+        imagen = 0;
+      }
+
+      function borrarColumna() {
+        this.remove();
+      }
+
+      let img = document.querySelectorAll("img");
+
+      let boton = document.querySelector("#engadir_gato");
+
+      boton.addEventListener("click", engadirImaxen);
+    </script>
+  </body>
+</html>
