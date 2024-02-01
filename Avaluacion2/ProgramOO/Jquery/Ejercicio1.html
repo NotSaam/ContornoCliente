@@ -29,50 +29,51 @@
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script>
       $(function () {
-        $("#draggable").draggable();
-        $("#droppable").droppable({
+        $(".draggable").draggable();
+        $(".droppable").droppable({
           drop: function (event, ui) {
-            $(this).addClass("ui-state-highlight").find("p").html("Dropped!");
+            var draggableId = ui.draggable.attr("id");
+            var droppableId = $(this).attr("id");
+
+            // Comprueba si el draggableId coincide con el droppableId
+            if (
+              (draggableId == "draggable1" && droppableId == "droppable1") ||
+              (draggableId == "draggable2" && droppableId == "droppable2") ||
+              (draggableId == "draggable3" && droppableId == "droppable3")
+            ) {
+              // Si es correcto, cambia el color a verde
+              $(this).css("background-color", "green");
+              $(this).find("p").html("¡Correcto!");
+            } else {
+              // Si es incorrecto, cambia el color a rojo
+              $(this).css("background-color", "red");
+              $(this).find("p").html("¡Incorrecto!");
+            }
           },
         });
       });
     </script>
   </head>
   <body>
-    <h3>1. Lista de palabras unha area para agudas llanas esdrujulas</h3>
-    <div id="draggable" class="ui-widget-content">
-      <p>chiquilicuatre</p>
-    </div>
-
-    <div id="draggable" class="ui-widget-content">
+    <div id="draggable1" class="draggable ui-widget-content">
       <p>cárcel</p>
     </div>
-    <div id="draggable" class="ui-widget-content">
+    <div id="draggable1" class="draggable ui-widget-content">
+      <p>camión</p>
+    </div>
+    <div id="draggable2" class="draggable ui-widget-content">
       <p>negro</p>
     </div>
-    <div id="draggable" class="ui-widget-content">
-      <p>rojo</p>
-    </div>
-    <div id="draggable" class="ui-widget-content">
-      <p>ejército</p>
-    </div>
-    <div id="draggable" class="ui-widget-content">
-      <p>españa</p>
-    </div>
-    <div id="draggable" class="ui-widget-content">
+    <div id="draggable3" class="draggable ui-widget-content">
       <p>sudáfrica</p>
     </div>
-    <div id="draggable" class="ui-widget-content">
-      <p>tierra</p>
-    </div>
-
-    <div id="droppable" class="ui-widget-header">
+    <div id="droppable1" class="droppable ui-widget-header">
       <p>Agudas</p>
     </div>
-    <div id="droppable" class="ui-widget-header">
-      <p>LLanas</p>
+    <div id="droppable2" class="droppable ui-widget-header">
+      <p>Llanas</p>
     </div>
-    <div id="droppable" class="ui-widget-header">
+    <div id="droppable3" class="droppable ui-widget-header">
       <p>Esdrújulas</p>
     </div>
   </body>
