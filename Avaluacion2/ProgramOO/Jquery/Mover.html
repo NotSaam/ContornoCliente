@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>jQuery UI Draggable - Default functionality</title>
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="/resources/demos/style.css" />
+    <style>
+      #draggable {
+        width: 150px;
+        height: 150px;
+        padding: 0.5em;
+      }
+
+      #draggable1 {
+        width: 150px;
+        height: 150px;
+        padding: 0.5em;
+      }
+
+      #bbad {
+        width: 150px;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+      $(function () {
+        $("#draggable").draggable();
+      });
+      $(function () {
+        $("#draggable1").draggable();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="draggable" class="ui-widget-content">
+      <p>a ver que movesme</p>
+      <img id="bbad" src="/img/bbad.jpg" />
+    </div>
+
+    <div id="draggable1" class="ui-widget-content">
+      <p>Moveme ou</p>
+      <img id="bbad" src="/img/narcos.jpg" />
+    </div>
+  </body>
+</html>
