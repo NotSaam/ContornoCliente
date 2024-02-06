@@ -3,51 +3,102 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Recuperacion 2º Bachiller</title>
+    <title>Recuperación 2º Bachiller</title>
     <link
       rel="stylesheet"
       href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
     />
     <link rel="stylesheet" href="/resources/demos/style.css" />
     <style>
-      #draggable {
+      #draggable1,
+      #draggable2,
+      #draggable3 {
         width: 100px;
         height: 100px;
         padding: 0.5em;
         float: left;
         margin: 10px 10px 10px 0;
       }
-      #droppable {
+
+      #droppable1,
+      #droppable2,
+      #droppable3 {
         width: 150px;
         height: 150px;
         padding: 0.5em;
         float: left;
         margin: 10px;
       }
+
+      .ui-widget-header {
+        background: #ccc;
+      }
+
+      .ui-state-highlight {
+        background: green;
+      }
+
+      .ui-state-error {
+        background: red;
+      }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
     <script>
       $(function () {
-        $(".draggable").draggable();
-        $(".droppable").droppable({
+        $("#draggable1, #draggable2, #draggable3").draggable();
+        
+        $("#droppable1").droppable({
           drop: function (event, ui) {
-            var draggableId = ui.draggable.attr("id");
-            var droppableId = $(this).attr("id");
-
-            // Comprueba si el draggableId coincide con el droppableId
-            if (
-              (draggableId == "draggable1" && droppableId == "droppable1") ||
-              (draggableId == "draggable2" && droppableId == "droppable2") ||
-              (draggableId == "draggable3" && droppableId == "droppable3")
-            ) {
-              // Si es correcto, cambia el color a verde
-              $(this).css("background-color", "green");
-              $(this).find("p").html("¡Correcto!");
+            if (ui.draggable.find("p").text().toLowerCase().trim() === "camión") {
+              $(this)
+                .addClass("ui-state-highlight")
+                .find("p")
+                .html("Correcto!")
+                .removeClass("ui-state-error");
             } else {
-              // Si es incorrecto, cambia el color a rojo
-              $(this).css("background-color", "red");
-              $(this).find("p").html("¡Incorrecto!");
+              $(this)
+                .addClass("ui-state-error")
+                .find("p")
+                .html("Incorrecto!")
+                .removeClass("ui-state-highlight");
+            }
+          },
+        });
+
+        $("#droppable2").droppable({
+          drop: function (event, ui) {
+            if (ui.draggable.find("p").text().toLowerCase().trim() === "negro") {
+              $(this)
+                .addClass("ui-state-highlight")
+                .find("p")
+                .html("Correcto!")
+                .removeClass("ui-state-error");
+            } else {
+              $(this)
+                .addClass("ui-state-error")
+                .find("p")
+                .html("Incorrecto!")
+                .removeClass("ui-state-highlight");
+            }
+          },
+        });
+
+        $("#droppable3").droppable({
+          drop: function (event, ui) {
+            if (ui.draggable.find("p").text().toLowerCase().trim() === "sudáfrica") {
+              $(this)
+                .addClass("ui-state-highlight")
+                .find("p")
+                .html("Correcto!")
+                .removeClass("ui-state-error");
+            } else {
+              $(this)
+                .addClass("ui-state-error")
+                .find("p")
+                .html("Incorrecto!")
+                .removeClass("ui-state-highlight");
             }
           },
         });
@@ -55,26 +106,28 @@
     </script>
   </head>
   <body>
-    <div id="draggable1" class="draggable ui-widget-content">
-      <p>cárcel</p>
-    </div>
-    <div id="draggable1" class="draggable ui-widget-content">
+    <div id="draggable1" class="ui-widget-content">
       <p>camión</p>
     </div>
-    <div id="draggable2" class="draggable ui-widget-content">
+
+    <div id="draggable2" class="ui-widget-content">
       <p>negro</p>
     </div>
-    <div id="draggable3" class="draggable ui-widget-content">
+
+    <div id="draggable3" class="ui-widget-content">
       <p>sudáfrica</p>
     </div>
-    <div id="droppable1" class="droppable ui-widget-header">
-      <p>Agudas</p>
+
+    <div id="droppable1" class="ui-widget-header">
+      <p>agudas</p>
     </div>
-    <div id="droppable2" class="droppable ui-widget-header">
-      <p>Llanas</p>
+
+    <div id="droppable2" class="ui-widget-header">
+      <p>graves</p>
     </div>
-    <div id="droppable3" class="droppable ui-widget-header">
-      <p>Esdrújulas</p>
+
+    <div id="droppable3" class="ui-widget-header">
+      <p>esdrújulas</p>
     </div>
   </body>
 </html>
