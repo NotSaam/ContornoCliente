@@ -9,26 +9,34 @@
     <h4></h4>
     <table id="Idtable" border="1">
       <tr>
-        <th>Prueba 1</th>
-        <th>Prueba 2</th>
-        <th>Prueba 3</th>
-    </tr>
-
-      <tr>
-        <th>Prueba 4</th>
-        <th>Prueba 5</th>
-        <th>Prueba 6</th>
+        <th>Racing</th>
+        <th>Club</th>
+        <th>Ferrol</th>
       </tr>
     </table>
 
-    <p></p>
+    <p>
+      El Racing Club de Ferrol, S.A.D. es un club de fútbol español de la ciudad
+      de Ferrol, provincia de La Coruña, Galicia que compite en Segunda
+      División.
+    </p>
 
-    <img src="/img/RacingFerrol.PNG" alt="">
+    <h2>
+      <p>
+        Fue fundado el 5 de octubre de 1919 a partir de la unión del Racing Club
+        y el Club Ferrol.
+      </p>
+    </h2>
+    <img id="ferrol" src="/img/RacingFerrol.PNG" alt="Ferrol" />
 
     <script>
-      $("#Idtable th").css("background", "#ddd");
-      $("#Idtable th").css("background", "#ddd");
-      $("#Idtable th").css("background", "#ddd");
+      $("#Idtable th").css("background", "lightgreen");
+      $("p").css("background", "lightgreen");
+      $("#ferrol").css("border", "10px solid black");
+      $("h2 p").css("background", "lightgrey");
+      $("#ferrol").click(function (event) {
+        $("img").css("width", "20%");
+      });
     </script>
   </body>
 </html>
