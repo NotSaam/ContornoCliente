@@ -1,0 +1,14 @@
+EXERCICIO ANIMACIÓNS:
+
+PROBA AS SEGUINTES FUNCIÓNS DE JQUERY DE INTERESE PARA ANIMACIÓN SOBRE UN DIV:
+
+    1. fadeIn(): fai que o elemento desapareza gradualmente ata que se faga visible.
+    2. fadeOut(): fai que o elemento desapareza gradualmente ata que desaparece.
+    3. fadeToggle(): alterna a visibilidade do elemento cun efecto de fundido.
+    4. slideDown(): fai que o elemento apareza deslizando dende a parte superior.
+    5. slideUp(): Fai que o elemento desapareza deslizando cara arriba.
+    6. slideToggle(): alterna entre desplegar e dobrar o elemento cun efecto de desprazamento.
+    7. show(): Mostra o elemento cun efecto de visualización predeterminado.
+    8. hide(): oculta o elemento cun efecto de desaparición predeterminado.
+    9. toggle(): alterna entre mostrar e ocultar o elemento.
+    10. animate(): Permítelle facer animacións personalizadas especificando as propiedades CSS a animar e a súa duración.
