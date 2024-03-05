@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <title>string</title>
+
+  <body>
+    <h4>
+      3.Palabra máis longa: implementa unha función que busca a palabra máis longa
+      nunha cadea de texto.
+    </h4>
+
+    <script>
+      // Definimos un novo método no prototipo de String
+      String.prototype.palabraMaisLonga = function () {
+        // Dividimos a cadea en palabras utilizando un espazo como separador
+        const palabras = this.split(" ");
+
+        // Inicializamos a palabra máis longa coa primeira palabra da cadea
+        let palabraMaisLonga = palabras[0];
+
+        // Comprobamos todas as palabras para atopar a máis longa
+        for (let i = 1; i < palabras.length; i++) {
+          if (palabras[i].length > palabraMaisLonga.length) {
+            palabraMaisLonga = palabras[i];
+          }
+        }
+
+        return palabraMaisLonga;
+      };
+
+    </script>
+  </body>
+</html>

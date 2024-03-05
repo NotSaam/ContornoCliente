@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <title></title>
+
+  <body>
+    <h4>
+      4. Capitalizar palabras: crea unha función que escriba a primeira letra de
+      cada palabra nunha cadea de texto.
+    </h4>
+
+    <script>
+      // Función para capitalizar a primeira letra de cada palabra
+      function capitalizarPalabras(cadena) {
+        // Dividimos a cadea en palabras utilizando un espazo como separador
+        const palabras = cadena.split(" ");
+
+        // Creamos un array para gardar as palabras capitalizadas
+        const palabrasCapitalizadas = palabras.map(function (palabra) {
+          // Capitalizamos a primeira letra de cada palabra e engadímola ao array
+          return palabra.charAt(0).toUpperCase() + palabra.slice(1);
+        });
+
+        // Unimos todas as palabras capitalizadas nunha nova cadea, separadas por espazos
+        const resultado = palabrasCapitalizadas.join(" ");
+        return resultado;
+      }
+
+      // Exemplo de uso e impresión
+      const texto = "este é un exemplo de capitalización de palabras";
+      const textoCapitalizado = capitalizarPalabras(texto);
+
+      document.write("<p>Cadea de texto orixinal: " + texto + "</p>");
+      document.write(
+        "<p>Cadea de texto capitalizada: " + textoCapitalizado + "</p>"
+      );
+    </script>
+  </body>
+</html>

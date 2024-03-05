@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <title></title>
+
+  <body>
+    <h4>
+      5. Inversión de palabras: escribe unha función que invierta a orde das
+      palabras nunha cadea de texto.
+    </h4>
+
+    <script>
+      // Función para invertir el orden de las palabras
+      function invertirPalabras(cadena) {
+        // Dividimos la cadena en palabras utilizando un espacio como separador
+        const palabras = cadena.split(" ");
+
+        // Invertimos el orden de las palabras
+        const palabrasInvertidas = palabras.reverse();
+
+        // Unimos las palabras invertidas en una nueva cadena, separadas por espacios
+        const resultado = palabrasInvertidas.join(" ");
+        return resultado;
+      }
+
+      // Ejemplo de uso e impresión
+      const texto = "Este es un ejemplo de inversión de palabras";
+      const textoInvertido = invertirPalabras(texto);
+
+      document.write("<p>Cadena de texto original: " + texto + "</p>");
+      document.write(
+        "<p>Cadena de texto invertida: " + textoInvertido + "</p>"
+      );
+    </script>
+  </body>
+</html>
