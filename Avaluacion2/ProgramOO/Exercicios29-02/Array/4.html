@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /* Aplanar  matriz: implementa unha función que aplana unha matriz
+        multidimensional nun único nivel */
+
+      // Definimos un novo método no prototipo de Array
+      Array.prototype.aplanar = function () {
+        // Creamos unha función interna recursiva para tratar con submatrices
+        const aplanarRecursivamente = (arr) => {
+          let aplanado = [];
+          for (let i = 0; i < arr.length; i++) {
+            if (Array.isArray(arr[i])) {
+              // Se o elemento é unha matriz, chamamos de novo a función para aplanar esa submatriz
+              aplanado = aplanado.concat(aplanarRecursivamente(arr[i]));
+            } else {
+              // Se non é unha matriz, simplemente engadimos o elemento ao aplanado
+              aplanado.push(arr[i]);
+            }
+          }
+          return aplanado;
+        };
+
+        // Chamamos á función recursiva co array actual
+        return aplanarRecursivamente(this);
+      };
+
+      // Exemplo de uso:
+      const matriz = [
+        [3, 4],
+        [5, 6],
+        [1, 2],
+      ];
+      const matrizAplanada = matriz.aplanar();
+
+      // Imprimimos a matriz aplanada utilizando document.write
+      document.write("Matriz aplanada: " + matrizAplanada.join(", "));
+    </script>
+  </body>
+</html>
