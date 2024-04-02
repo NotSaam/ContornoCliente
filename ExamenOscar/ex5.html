@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejercicio 5</title>
+    <script type="text/JavaScript" src="../jquery-1.7.js"></script>
+  </head>
+
+  <body>
+    <h4>
+      Exercicio 5 <br />
+      Define un obxecto JSON para que se almacene unha aula do centro cos
+      seguintes datos: <br />
+      Nome: Radio. <br />
+      Ubicación: 1º Planta.<br />
+      Ocupada: True<br />
+      Data de fin de ocupación: 09-03-2024<br />
+      Define o obxecto no formato JSON estándar.<br />
+      Converte este obxecto nun obxecto Object de Javascript. <br />
+      Xera un Array con este tipo de obxecto creado e carga cun bucle For, e
+      carga no array 2 aulas máis. <br />
+      Finalmente, imprime o seu contido.
+    </h4>
+
+    <script>
+      // Definir el objeto JSON
+      const aulaJSON = {
+        Nome: "Radio",
+        Ubicación: "1º Planta",
+        Ocupada: true,
+        "Data de fin de ocupación": "09-03-2024",
+      };
+
+      // Convertir el JSON a objeto JavaScript
+      const aulaObject = JSON.parse(JSON.stringify(aulaJSON));
+
+      //Crear un Array objeto creado y cargar con For
+      const aulasArray = [];
+      for (let i = 0; i < 3; i++) {
+        aulasArray.push(aulaObject);
+      }
+
+      //Imprimir el array por consola
+      console.log(aulasArray);
+    </script>
+  </body>
+</html>

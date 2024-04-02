@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejercicio 3</title>
+    <script type="text/JavaScript" src="../jquery-1.7.js"></script>
+  </head>
+
+  <body>
+    <h4>
+      Exercicio 3<br />
+      Utilizando patróns modifica o obxecto String para que poida comprobar se
+      un obxecto cadea contén ou non números no seu interior.
+    </h4>
+
+    <script>
+      //Crear la variable frase par
+      var frase = "Hola teño 12 anos";
+
+      //Funcion para saber si tiene numeros o no
+      String.prototype.contieneNumeros = function () {
+        let num = /[1-9]/;
+        num.test(this);
+        var mensaje = "";
+
+        //Creamos el if para saber si tiene numeros
+        if (num.test(this)) {
+          mensaje = "Tu cadena contiene numeros"; //En caso de que tenga numeros saldría por pantalla el mensaje entre comillas
+        } else {
+          mensaje = "Tu cadena no contiene numeros"; //En caso de que no tenga numeros saldría por pantalla el mensaje entre comillas
+        }
+        //mostramos el mensaje
+        return mensaje;
+      };
+      document.write(frase.contieneNumeros());
+    </script>
+  </body>
+</html>

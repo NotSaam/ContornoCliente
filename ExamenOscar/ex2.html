@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejercicio 2</title>
+    <script type="text/JavaScript" src="../jquery-1.7.js"></script>
+  </head>
+
+  <body>
+    <h4>
+      Exercicio 2<br />
+      Crea un listado de webs dinámico e de interese para o usuario.<br />
+      O que se pretende é que un input recolla unha páxina web. <br />
+      Ao darlle ao botón inserir (non será un botón ao uso, será a imaxe
+      facilitada neste exame co nome boton.jpg) validará se é unha url, e no
+      caso de que sexa, esta pasará a un div con fondo verde e letras brancas
+      pero, só pasará o nome do dominio.<br />
+      Se a url non é válida, non pasa ao div e avisarase cunha mensaxe que sairá
+      debaixo do input ao usuario mediante un fadeIn.
+      <br />
+      Exemplo:http://www.corme.net---->pasa ao div como corme.net (foi validada
+      como url).
+    </h4>
+
+    <form id="formulario">
+      <input id="inputUrl" type="text" />
+      <input type="button" id="botonIngresar" value="Validar" />
+    </form>
+
+    <script>
+      const inputUrl = document.getElementById("inputUrl");
+      const ComprobarUrl = document.getElementById("comprobarUrl");
+
+      //Función para validar la URL
+      function isValidUrl(url) {
+        const urlPattern = /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/;
+        return urlPattern.test(url);
+      }
+    </script>
+  </body>
+</html>

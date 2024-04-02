@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejercicio 1</title>
+    <script type="text/JavaScript" src="../jquery-1.7.js"></script>
+  </head>
+
+  <body>
+    <h4>
+      Exercicio 1<br />
+
+      Dado o parágrafo que che mostramos a continuación.
+      <br />
+      “A informática cuántica é unha disciplina de ciencia da computación que se
+      ocupa de desenvolver algoritmos, computadores e dispositivos para
+      traballar con bits cuánticos.<br />
+      Esta tecnoloxía promete ás súas usuarias unha potencia informática sen
+      precedentes, que poderían cambiar o xeito no que o mundo trata coa
+      información”.
+      <br />
+      Cando pulses sobre el debe cambiar a cor de fondo a vermello e a cor da
+      letra a branca. Aos dez segundos debe cambiar ao seu estado por defecto.
+    </h4>
+
+    <p id="parrafo">
+      “A informática cuántica é unha disciplina de ciencia da computación que se
+      ocupa de desenvolver algoritmos, computadores e dispositivos para
+      traballar con bits cuánticos. Esta tecnoloxía promete ás súas usuarias
+      unha potencia informática sen precedentes, que poderían cambiar o xeito no
+      que o mundo trata coa información”.
+    </p>
+
+    <script>
+      //Crear la variable parrafo para cambiar los estilos posteriormente
+      const parrafo = document.getElementById("parrafo");
+
+      // Función para cambiar los estilos a rojo el parrafo y blanco las letras
+      function cambiarEstilos() {
+        parrafo.style.backgroundColor = "red";
+        parrafo.style.color = "white";
+      }
+
+      // Función para restaurar los estilos por defecto
+      function restaurarEstilos() {
+        parrafo.style.backgroundColor = "";
+        parrafo.style.color = "";
+      }
+
+      // Crear evento  click
+      parrafo.addEventListener("click", cambiarEstilos);
+
+      // Restablecer los estilos al pasar los 10 segundos
+      setTimeout(restaurarEstilos, 10000);
+    </script>
+  </body>
+</html>

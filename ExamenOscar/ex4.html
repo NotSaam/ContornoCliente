@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejercicio 4</title>
+    <script type="text/JavaScript" src="../jquery-1.7.js"></script>
+  </head>
+
+  <body>
+    <h4>
+      Exercicio 4<br />
+      Fai un programa que cada 10 segundos cargue unha imaxe das 20 que temos na
+      carpeta “imaxes-4”, na aula virtual. <br />
+      Cando cargue as 10 imaxes, deixará de actuar o intervalo. <br />
+      Fai que as imaxes aparezan cun fadeIn ou animate, co mesmo tamaño, e ben
+      aliñadas, de forma que aparezan cinco nunca liña e cinco na seguinte.
+    </h4>
+    <div id="idImagenes"></div>
+    <script>
+      // Ensñear  as imagenes
+      const idImagenes = document.getElementById("idImagenes");
+      let img = 1;
+
+      // Funcion para cargar a imagen cada 10 segundos
+      const cargarImagenes = setInterval(() => {
+        if (img <= 10) {
+          const imagen = document.createElement("img");
+          imagen.src = `imaxes/${img}.jpeg`;
+          imagen.style.opacity = 0;
+          imagen.height = 250;
+          imagen.width = 250;
+          imagen.style.margin = "20px";
+          idImagenes.appendChild(imagen);
+
+          // Con este cacho de codigo mostramos as imagenes
+          setTimeout(() => {
+            imagen.style.opacity = 1;
+          }, 1000);
+          img++;
+        } else {
+          clearInterval(cargarImagenes);
+        }
+      }, 10000);
+    </script>
+  </body>
+</html>
