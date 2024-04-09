@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ejercicio 1</title>
+  </head>
+
+  <body>
+    <h4>
+      Exercicio 1: Garda nun obxecto JS os datos dun barco.<br />
+      Pídeos mediante prompt.<br />
+      Nome <br />
+      Porto Base <br />
+      Ano de construción <br />
+      Eslora <br />
+      Agora converte este obxecto en JSON e almacénano en LocalStorage. <br />
+      Garda este obxecto <br />
+    </h4>
+
+    <script>
+      // Pedir os datos ao usuario
+      var nome = prompt("Introduce o nome do barco:");
+      var portoBase = prompt("Introduce o porto base do barco:");
+      var anoConstrucion = prompt("Introduce o ano de construción do barco:");
+      var eslora = prompt("Introduce a eslora do barco:");
+
+      // Crear un obxecto coa información
+      var barco = {
+        nome: nome,
+        portoBase: portoBase,
+        anoConstrucion: anoConstrucion,
+        eslora: eslora,
+      };
+
+      // Convertir o obxecto a JSON
+      var barcoJSON = JSON.stringify(barco);
+
+      // Gardar o JSON en LocalStorage
+      localStorage.setItem("barco", barcoJSON);
+
+      // Mostrar unha mensaxe de confirmación
+      alert("O obxecto do barco foi gardado en LocalStorage.");
+
+      // Recuperar el objeto JSON almacenado en LocalStorage
+      var barcoJSON = localStorage.getItem("barco");
+
+      // Convertir el JSON a un objeto JavaScript
+      var barco = JSON.parse(barcoJSON);
+
+      // Mostrar el objeto en la consola
+      console.log(barco);
+    </script>
+  </body>
+</html>
